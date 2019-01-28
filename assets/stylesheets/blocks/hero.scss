@@ -1,0 +1,39 @@
+.hero {
+  padding: 0.8% 0 3%;
+  background: url("../img/texture.png") center center no-repeat / cover,
+  url("../img/home-bg.jpg") center center no-repeat / cover;
+  color: $light;
+}
+
+.hero__container {
+  justify-content: space-between;
+}
+
+.hero__content {
+  display: flex;
+  align-items: stretch;
+  flex: 1;
+}
+.hero__content-left,
+.hero__content-right{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero__content-right {
+  padding-top: 10%;
+}
+
+.hero__desc {
+  @include lifehack-font;
+  font-size: 4.643em;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.hero__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

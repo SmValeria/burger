@@ -1,0 +1,18 @@
+.title {
+  font-family: "Gagalin", sans-serif;
+  font-size: 5.143em;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 45px;
+
+  &--color-orange {
+    color: $orange;
+  }
+  &--color-light {
+    color: $light;
+  }
+
+  &--color-dark {
+    color: $dark;
+  }
+}

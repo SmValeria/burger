@@ -1,0 +1,29 @@
+.about {
+  padding: 2% 0;
+  background: url("../img/features-bg.jpg") center center no-repeat / cover;
+}
+
+.about__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 4%;
+  grid-row-gap: 4%;
+}
+
+.about__img-wrapper {
+  height: 90px;
+  margin-bottom: 29px;
+}
+
+.about__title {
+  @include lifehack-font;
+  font-size: 1.714em;
+  letter-spacing: -0.03em;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.about__text {
+  opacity: 0.8;
+  line-height: 1.6;
+}

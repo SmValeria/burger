@@ -1,0 +1,22 @@
+.menu__list {
+  display: flex;
+  align-items: center;
+}
+
+.menu__item {
+  @include header-text;
+}
+
+.menu__item:not(:last-of-type) {
+  margin-right: 13px;
+
+  &::after {
+    content: '•';
+    display: inline-flex;
+    margin-left: 14px;
+  }
+}
+
+.menu__link {
+  color: $light;
+}

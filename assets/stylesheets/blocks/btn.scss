@@ -1,0 +1,16 @@
+.btn {
+  padding: 11px 15px;
+  border-radius: 5px;
+  @include header-text;
+
+
+  &--background-orange {
+    background-color: $red;
+    color: $light;
+  }
+
+  &--background-dark {
+    background-color: $dark;
+    color: $light;
+  }
+}
