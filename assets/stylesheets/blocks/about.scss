@@ -1,6 +1,10 @@
 .about {
   padding: 2% 0;
-  background: url("../img/features-bg.jpg") center center no-repeat / cover;
+  background: url("../img/features-bg.jpg") center center/cover no-repeat;
+}
+
+.about__title {
+  margin-bottom: 30px;
 }
 
 .about__list {
@@ -15,7 +19,11 @@
   margin-bottom: 29px;
 }
 
-.about__title {
+.about__img {
+  display: inline-block;
+}
+
+.about__title-item {
   @include lifehack-font;
   font-size: 1.714em;
   letter-spacing: -0.03em;

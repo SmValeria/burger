@@ -1,28 +1,30 @@
 .hero {
   padding: 0.8% 0 3%;
-  background: url("../img/texture.png") center center no-repeat / cover,
-  url("../img/home-bg.jpg") center center no-repeat / cover;
+  background: url("../img/texture.png") center center/cover no-repeat,
+  url("../img/home-bg.jpg") center center/cover no-repeat;
   color: $light;
-}
-
-.hero__container {
-  justify-content: space-between;
 }
 
 .hero__content {
   display: flex;
-  align-items: stretch;
-  flex: 1;
+  align-items: center;
+  flex: 0.7;
 }
+
 .hero__content-left,
-.hero__content-right{
-  flex: 1;
+.hero__content-right {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.hero__content-left {
+  flex-basis: 52%;
+}
+
 .hero__content-right {
-  padding-top: 10%;
+  flex-basis: 48%;
+  padding-top: 5%;
 }
 
 .hero__desc {
@@ -33,7 +35,17 @@
 }
 
 .hero__bottom {
+  margin-top: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.hero__img-wrap {
+  position: relative;
+}
+
+.hero__img-overlay {
+  position: absolute;
+  z-index: 1;
 }

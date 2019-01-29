@@ -2,10 +2,10 @@
   width: 29px;
   height: 14px;
   display: flex;
-  background: url("../img/arrow-scroll.png") center center no-repeat;
+  background: url("../img/arrow-scroll.svg") center center no-repeat;
   transition: filter 0.2s linear;
 
   &:hover {
-    filter: drop-shadow(0 8px 1px $orange);
+    filter: drop-shadow(0 5px 0px $orange) drop-shadow(0 5px 0px $orange);
   }
 }

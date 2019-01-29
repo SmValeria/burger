@@ -3,12 +3,6 @@ $dark: #2f3234;
 $orange: #f9b43b;
 $red : #e45028;
 
-@mixin header-text {
-  font-size: 0.929em;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-
 @mixin lifehack-font {
   font-family: "LifeHack", Georgia, sans-serif;
   font-weight: 500;
