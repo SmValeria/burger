@@ -1,0 +1,35 @@
+.socials {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+
+.socials__item:not(:last-of-type) {
+  margin-right: 20px;
+}
+.socials__icon {
+  fill: $light;
+  fill-opacity: 0.3;
+  transition: fill-opacity 0.3s ease;
+  &--vk {
+    width: 23px;
+    height: 13px;
+  }
+  &--fb {
+    width: 20px;
+    height: 20px;
+  }
+  &--inst {
+    width: 20px;
+    height: 20px;
+  }
+  &--twitter {
+    width: 20px;
+    height: 16px;
+  }
+}
+
+.socials__item:hover .socials__icon {
+  fill-opacity: 1;
+}

@@ -1,7 +1,7 @@
 .hero {
   padding: 0.8% 0 3%;
   background: url("../img/texture.png") center center/cover no-repeat,
-  url("../img/home-bg.jpg") center center/cover no-repeat;
+  url("../img/home-bg.jpg") center center/cover no-repeat $dark;
   color: $light;
 }
 

@@ -523,12 +523,13 @@ body {
   height: 100vh;
   min-height: 650px; }
   .section--center .container {
-    justify-content: center;
+    justify-content: center; }
+  .section--center .title {
     text-align: center; }
 
 .hero {
   padding: 0.8% 0 3%;
-  background: url("../img/texture.png") center center/cover no-repeat, url("../img/home-bg.jpg") center center/cover no-repeat;
+  background: url("../img/texture.png") center center/cover no-repeat, url("../img/home-bg.jpg") center center/cover no-repeat #2f3234;
   color: #ffffff; }
 
 .hero__content {
@@ -687,18 +688,29 @@ body {
   grid-column-gap: 4%;
   grid-row-gap: 4%; }
 
+.about__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; }
+
 .about__img-wrapper {
   margin-bottom: 29px; }
 
-.about__img {
-  display: inline-block;
-  max-width: 6.3rem; }
-  .about__img--meat {
-    fill: #E35028; }
-  .about__img--hand {
-    fill: #F9B43B; }
-  .about__img--natural {
-    fill: #8BC03F; }
+.about__img--meat {
+  width: 97px;
+  height: 89px;
+  fill: #E35028; }
+
+.about__img--hand {
+  width: 73px;
+  height: 85px;
+  fill: #F9B43B; }
+
+.about__img--natural {
+  width: 88px;
+  height: 75px;
+  fill: #8BC03F; }
 
 .about__title-item {
   font-family: "LifeHack", Georgia, sans-serif;
@@ -715,7 +727,9 @@ body {
 .reviews__list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 50vh 50vh; }
+  grid-template-rows: 50% 50%;
+  height: 100%;
+  background-color: #2f3234; }
 
 .reviews__item {
   position: relative;
@@ -759,3 +773,69 @@ body {
   font-family: "Gagalin", sans-serif;
   font-weight: 400;
   margin-bottom: 30px; }
+
+.contacts {
+  position: relative;
+  color: #ffffff; }
+
+.map {
+  background: url("../img/map.jpg") center center/cover no-repeat; }
+
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #0e0e0e;
+  padding: 5px 0; }
+
+.footer__container {
+  flex-direction: row;
+  min-height: 50px; }
+
+.footer__col {
+  width: 50%; }
+
+address {
+  margin-bottom: 5px; }
+
+.phone {
+  color: #ffffff;
+  font-weight: 700; }
+
+.phone__icon {
+  width: 12px;
+  height: 11px;
+  fill: #e45028; }
+
+.phone__link {
+  color: #e45028; }
+
+.socials {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%; }
+
+.socials__item:not(:last-of-type) {
+  margin-right: 20px; }
+
+.socials__icon {
+  fill: #ffffff;
+  fill-opacity: 0.3;
+  transition: fill-opacity 0.3s ease; }
+  .socials__icon--vk {
+    width: 23px;
+    height: 13px; }
+  .socials__icon--fb {
+    width: 20px;
+    height: 20px; }
+  .socials__icon--inst {
+    width: 20px;
+    height: 20px; }
+  .socials__icon--twitter {
+    width: 20px;
+    height: 16px; }
+
+.socials__item:hover .socials__icon {
+  fill-opacity: 1; }
