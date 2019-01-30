@@ -23,8 +23,9 @@
                         <div class="header__left">
                             <div class="logo">
                                 <a href="./index.html" class="logo__link">
-                                    <img class="logo__img" src="./assets/img/logo.svg"
-                                         alt="Logo Mr Burger">
+                                    <svg class="logo__img header__logo-img">
+                                        <use xlink:href="./assets/img/sprite.svg#logo"></use>
+                                    </svg>
                                 </a>
                             </div>
                         </div>
@@ -77,9 +78,10 @@
                         <div class="hero__content-left">
                             <div class="hero__img-wrap">
                                 <img class="hero__img" src="./assets/img/steam.png" alt="Burger">
-                                <img class="hero__img-overlay" src="./assets/img/drops.svg"
-                                     alt="Drops for burger"
-                                     style="  top: 18%; left: -2%;">
+                                <svg class="hero__img-overlay" style="top: 18%; left: -3%;">
+                                    <use xlink:href="./assets/img/sprite.svg#drops"></use>
+                                </svg>
+
                             </div>
                         </div>
                         <div class="hero__content-right">
@@ -91,7 +93,11 @@
                     </div>
                     <div class="hero__bottom">
                         <div class="scroll-down">
-                            <a href="#" class="scroll-down__link"></a>
+                            <a href="#" class="scroll-down__link">
+                                <svg class="scroll-down__icon">
+                                    <use xlink:href="./assets/img/sprite.svg#arrow-scroll"></use>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -102,7 +108,9 @@
                     <ul class="about__list">
                         <li class="about__item">
                             <div class="about__img-wrapper">
-                                <img src="./assets/img/meat.svg" alt="Meat" class="about__img">
+                                <svg class="about__img about__img--meat">
+                                    <use xlink:href="./assets/img/sprite.svg#meat"></use>
+                                </svg>
                             </div>
                             <div class="about__desc">
                                 <h3 class="about__title-item">100% свежее мясо</h3>
@@ -113,8 +121,9 @@
                         </li>
                         <li class="about__item">
                             <div class="about__img-wrapper">
-                                <img src="./assets/img/hand.svg" alt="Hand made"
-                                     class="about__img">
+                                <svg class="about__img about__img--hand">
+                                    <use xlink:href="./assets/img/sprite.svg#hand"></use>
+                                </svg>
                             </div>
                             <div class="about__desc">
                                 <h3 class="about__title-item">Ручная  сборка</h3>
@@ -125,8 +134,9 @@
                         </li>
                         <li class="about__item">
                             <div class="about__img-wrapper">
-                                <img src="./assets/img/natural.svg" alt="Leaf"
-                                     class="about__img">
+                                <svg class="about__img about__img--natural">
+                                    <use xlink:href="./assets/img/sprite.svg#natural"></use>
+                                </svg>
                             </div>
                             <div class="about__desc">
                                 <h3 class="about__title-item">Натуральные
@@ -304,5 +314,6 @@
             </ul>
         </nav>
     </div>
+
 </body>
 </html>

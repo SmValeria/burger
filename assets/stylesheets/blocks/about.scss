@@ -15,12 +15,22 @@
 }
 
 .about__img-wrapper {
-  height: 90px;
   margin-bottom: 29px;
 }
 
 .about__img {
   display: inline-block;
+  max-width: 6.3rem;
+
+  &--meat {
+    fill: #E35028;
+  }
+  &--hand {
+    fill: #F9B43B;
+  }
+  &--natural {
+    fill: #8BC03F;
+  }
 }
 
 .about__title-item {
