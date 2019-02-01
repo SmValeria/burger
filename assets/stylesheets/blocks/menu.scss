@@ -1,24 +1,77 @@
+.menu {
+  background: url("../img/menu.jpg") center center/cover no-repeat, $dark;
+  position: relative;
+  color: $light;
+}
+
+.menu__container {
+  padding: 6% 1%;
+}
+
 .menu__list {
   display: flex;
-  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 
 .menu__item {
-  font-size: 0.929em;
-  font-weight: 500;
-  text-transform: uppercase;
+  height: 100%;
+  display: flex;
 }
 
-.menu__item:not(:last-of-type) {
-  margin-right: 13px;
+.menu__item-header-wr {
+  width: 80px;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
 
-  &::after {
-    content: '•';
-    display: inline-flex;
-    margin-left: 14px;
+  &--meat {
+    background: linear-gradient(rgba(20, 20, 20, 0.7), rgba(20, 20, 20, 0.7)),
+    url("../img/menu-1.jpg") 74% center/cover no-repeat;
+  }
+
+  &--vegan {
+    background: linear-gradient(rgba(20, 20, 20, 0.7), rgba(20, 20, 20, 0.7)),
+    url("../img/menu-2.jpg") 91% center/cover no-repeat;
+  }
+
+  &--diet {
+    background: linear-gradient(rgba(20, 20, 20, 0.7), rgba(20, 20, 20, 0.7)),
+    url("../img/menu-3.jpg") right center/cover no-repeat;
   }
 }
 
-.menu__link {
-  color: $light;
+.menu__item-header {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: rotate(270deg) translateY(-50%);
+  transform-origin: 0 0;
+  white-space: nowrap;
+  font-size: 2.857em;
+}
+
+.menu__text {
+  max-width: 0;
+  overflow: hidden;
+  background-color: rgba(#2f3234, 0.93);
+  transition: max-width 0.7s ease-in-out;
+}
+
+.menu__desc {
+  padding: 6% 4%;
+  line-height: 1.714em;
+}
+
+.menu__item--active,
+.menu__item:hover {
+  .menu__item-header {
+    color: $orange;
+  }
+
+  .menu__text {
+    max-width: 40rem;
+  }
 }

@@ -1,0 +1,25 @@
+.menubar__list {
+  display: flex;
+  align-items: center;
+}
+
+.menubar__item {
+  font-size: 0.929em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.menubar__item:not(:last-of-type) {
+  margin-right: 13px;
+
+  &::after {
+    content: '•';
+    display: inline-flex;
+    margin-left: 14px;
+  }
+}
+
+.menubar__link {
+  color: $light;
+}
+
