@@ -43,12 +43,12 @@
                                     </a>
                                 </li>
                                 <li class="menubar__item">
-                                    <a href="#" class="menubar__link">
+                                    <a href="#team" class="menubar__link">
                                         Команда
                                     </a>
                                 </li>
                                 <li class="menubar__item">
-                                    <a href="#" class="menubar__link">
+                                    <a href="#menu" class="menubar__link">
                                         Меню
                                     </a>
                                 </li>
@@ -63,15 +63,22 @@
                                     </a>
                                 </li>
                                 <li class="menubar__item">
-                                    <a href="#" class="menubar__link">
+                                    <a href="#contacts" class="menubar__link">
                                         Контакты
                                     </a>
                                 </li>
                             </ul>
                         </nav>
-                        <a href="#" class="btn btn--background-orange">
-                            Заказать
-                        </a>
+                        <div class="header__links">
+                            <a href="#order" class="btn btn--background-red header__link">
+                                Заказать
+                            </a>
+                            <a href="#" class="hamburger header__link">
+                                <span class="hamburger__line hamburger__line-top"></span>
+                                <span class="hamburger__line hamburger__line-middle"></span>
+                                <span class="hamburger__line hamburger__line-bottom"></span>
+                            </a>
+                        </div>
                     </div>
                 </header>
                 <div class="hero__content">
@@ -86,7 +93,7 @@
                     </div>
                     <div class="hero__content-right">
                         <div class="hero__text">
-                            <h2 class="title title--color-orange">Мы делаем</h2>
+                            <h2 class="title title--color-orange hero__title">Мы делаем</h2>
                             <p class="hero__desc">натуральные бургеры</p>
                         </div>
                     </div>
@@ -155,136 +162,173 @@
             </div>
         </section>
         <section class="section team" id="team">
-            <div class="team__container ">
-                <div class="team__content">
-                    <h2 class="title title--color-orange team__title">
-                        команда
-                    </h2>
-                    <ul class="team__list" id="team-accordion">
-                        <li class="team__member">
-                            <h4 class="name team__member-name">Дэниэл Редклиф</h4>
-                            <div class="team__member-info">
-                                <div class="team__member-left">
-                                    <div class="team__member-appearance" style="background-image:
+            <div class="container team__container">
+                <div class="team__content-wr">
+                    <div class="team__content">
+                        <h2 class="title title--color-orange team__title">
+                            команда
+                        </h2>
+                        <ul class="team__list" id="team-accordion">
+                            <li class="team__member">
+                                <h4 class="title team__member-name">Дэниэл Редклиф</h4>
+                                <div class="team__member-info">
+                                    <div class="team__member-left">
+                                        <div class="team__member-appearance" style="background-image:
                                      url('./assets/img/team-member.jpg')">
+                                        </div>
+                                    </div>
+                                    <div class="team__member-right">
+                                        <div class="team__member-text">
+                                            <p class="team__member-occupation">
+                                                Оператор
+                                            </p>
+                                            <p class="team__member-about">
+                                                С радостью поможет подобрать идеальный бургер и оформить
+                                                заказ.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="team__member-right">
-                                    <div class="team__member-text">
-                                        <p class="team__member-occupation">
-                                            Оператор
-                                        </p>
-                                        <p class="team__member-about">
-                                            С радостью поможет подобрать идеальный бургер и оформить
-                                            заказ.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="team__member team__member--active">
-                            <h4 class="name team__member-name">Ричард Джеймс</h4>
-                            <div class="team__member-info">
-                                <div class="team__member-left">
-                                    <div class="team__member-appearance" style="background-image:
+                            </li>
+                            <li class="team__member team__member--active">
+                                <h4 class="title team__member-name">Ричард Джеймс</h4>
+                                <div class="team__member-info">
+                                    <div class="team__member-left">
+                                        <div class="team__member-appearance" style="background-image:
                                      url('./assets/img/team-member.jpg')">
+                                        </div>
+                                    </div>
+                                    <div class="team__member-right">
+                                        <div class="team__member-text">
+                                            <p class="team__member-occupation">
+                                                Оператор
+                                            </p>
+                                            <p class="team__member-about">
+                                                С радостью поможет подобрать идеальный бургер и оформить
+                                                заказ.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="team__member-right">
-                                    <div class="team__member-text">
-                                        <p class="team__member-occupation">
-                                            Оператор
-                                        </p>
-                                        <p class="team__member-about">
-                                            С радостью поможет подобрать идеальный бургер и оформить
-                                            заказ.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="team__member">
-                            <h4 class="name team__member-name">Джейк Финн</h4>
-                            <div class="team__member-info">
-                                <div class="team__member-left">
-                                    <div class="team__member-appearance" style="background-image:
+                            </li>
+                            <li class="team__member">
+                                <h4 class="title team__member-name">Джейк Финн</h4>
+                                <div class="team__member-info">
+                                    <div class="team__member-left">
+                                        <div class="team__member-appearance" style="background-image:
                                      url('./assets/img/team-member.jpg')">
+                                        </div>
+                                    </div>
+                                    <div class="team__member-right">
+                                        <div class="team__member-text">
+                                            <p class="team__member-occupation">
+                                                Оператор
+                                            </p>
+                                            <p class="team__member-about">
+                                                С радостью поможет подобрать идеальный бургер и оформить
+                                                заказ.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="team__member-right">
-                                    <div class="team__member-text">
-                                        <p class="team__member-occupation">
-                                            Оператор
-                                        </p>
-                                        <p class="team__member-about">
-                                            С радостью поможет подобрать идеальный бургер и оформить
-                                            заказ.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="team__member">
-                            <h4 class="name team__member-name">Николай Иванов</h4>
-                            <div class="team__member-info">
-                                <div class="team__member-left">
-                                    <div class="team__member-appearance" style="background-image:
+                            </li>
+                            <li class="team__member">
+                                <h4 class="title team__member-name">Николай Иванов</h4>
+                                <div class="team__member-info">
+                                    <div class="team__member-left">
+                                        <div class="team__member-appearance" style="background-image:
                                      url('./assets/img/team-member.jpg')">
+                                        </div>
+                                    </div>
+                                    <div class="team__member-right">
+                                        <div class="team__member-text">
+                                            <p class="team__member-occupation">
+                                                Оператор
+                                            </p>
+                                            <p class="team__member-about">
+                                                С радостью поможет подобрать идеальный бургер и оформить
+                                                заказ.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="team__member-right">
-                                    <div class="team__member-text">
-                                        <p class="team__member-occupation">
-                                            Оператор
-                                        </p>
-                                        <p class="team__member-about">
-                                            С радостью поможет подобрать идеальный бургер и оформить
-                                            заказ.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
-        <section class="section menu">
+        <section class="section menu" id="menu">
             <div class="menu__container container">
                 <h2 class="title title--color-light menu__title">
                     Меню
                 </h2>
                 <ul class="menu__list" id="menu-accordion">
-                    <li class="menu__item">
-                        <header class="menu__item-header-wr menu__item-header-wr--meat">
+                    <li class="menu__item menu__item--active">
+                        <header class="menu__item-header-wr"
+                                style="background: linear-gradient(rgba(20, 20, 20, 0.7), rgba(20, 20, 20, 0.7)),
+                                url('./assets/img/menu-1.jpg') 74% center/cover no-repeat;">
                             <h3 class="title menu__item-header">Для мясоедов</h3>
                         </header>
                         <div class="menu__text">
+                            <a href="#" class="hamburger menu__hamburger hamburger--close">
+                                <span class="hamburger__line hamburger__line-top"></span>
+                                <span class="hamburger__line hamburger__line-middle"></span>
+                                <span class="hamburger__line hamburger__line-bottom"></span>
+                            </a>
                             <p class="menu__desc">
-                                Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову, однако механизм сочленений неустойчив. Модальность высказывания, как справедливо считает И.Гальперин, пространственно выбирает метр.
-                                Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову.
+                                Речевой акт редуцирует диалектический характер. Развивая эту тему,
+                                заимствование редуцирует конструктивный механизм сочленений.
+                                Лирический субъект начинает диссонансный анжамбеман. Наш современник
+                                стал особенно чутко относиться к слову, однако механизм сочленений
+                                неустойчив. Модальность высказывания, как справедливо считает
+                                И.Гальперин, пространственно выбирает метр.
+                                Речевой акт редуцирует диалектический характер. Развивая эту тему,
+                                заимствование редуцирует конструктивный механизм сочленений.
+                                Лирический субъект начинает диссонансный анжамбеман. Наш современник
+                                стал особенно чутко относиться к слову.
                             </p>
                         </div>
                     </li>
                     <li class="menu__item">
-                        <header class="menu__item-header-wr menu__item-header-wr--vegan">
+                        <header class="menu__item-header-wr"
+                                style="background: linear-gradient(rgba(20, 20, 20, 0.7), rgba(20, 20, 20, 0.7)),
+                                url('./assets/img/menu-2.jpg') 91% center/cover no-repeat;">
                             <h3 class="title menu__item-header">Вегетарианское</h3>
                         </header>
                         <div class="menu__text">
                             <p class="menu__desc">
-                                Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову, однако механизм сочленений неустойчив. Модальность высказывания, как справедливо считает И.Гальперин, пространственно выбирает метр.
-                                Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову.
+                                Речевой акт редуцирует диалектический характер. Развивая эту тему,
+                                заимствование редуцирует конструктивный механизм сочленений.
+                                Лирический субъект начинает диссонансный анжамбеман. Наш современник
+                                стал особенно чутко относиться к слову, однако механизм сочленений
+                                неустойчив. Модальность высказывания, как справедливо считает
+                                И.Гальперин, пространственно выбирает метр.
+                                Речевой акт редуцирует диалектический характер. Развивая эту тему,
+                                заимствование редуцирует конструктивный механизм сочленений.
+                                Лирический субъект начинает диссонансный анжамбеман. Наш современник
+                                стал особенно чутко относиться к слову.
                             </p>
                         </div>
                     </li>
                     <li class="menu__item">
-                        <header class="menu__item-header-wr menu__item-header-wr--diet">
+                        <header class="menu__item-header-wr"
+                                style="background: linear-gradient(rgba(20, 20, 20, 0.7), rgba(20, 20, 20, 0.7)),
+                                url('./assets/img/menu-3.jpg') right center/cover no-repeat;">
                             <h3 class="title menu__item-header">Диетическое</h3>
                         </header>
                         <div class="menu__text">
                             <p class="menu__desc">
-                                Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову, однако механизм сочленений неустойчив. Модальность высказывания, как справедливо считает И.Гальперин, пространственно выбирает метр.
-                                Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову.
+                                Речевой акт редуцирует диалектический характер. Развивая эту тему,
+                                заимствование редуцирует конструктивный механизм сочленений.
+                                Лирический субъект начинает диссонансный анжамбеман. Наш современник
+                                стал особенно чутко относиться к слову, однако механизм сочленений
+                                неустойчив. Модальность высказывания, как справедливо считает
+                                И.Гальперин, пространственно выбирает метр.
+                                Речевой акт редуцирует диалектический характер. Развивая эту тему,
+                                заимствование редуцирует конструктивный механизм сочленений.
+                                Лирический субъект начинает диссонансный анжамбеман. Наш современник
+                                стал особенно чутко относиться к слову.
                             </p>
                         </div>
                     </li>
@@ -420,11 +464,124 @@
                 </li>
             </ul>
         </section>
-        <section class="contacts" id="contacts">
-            <div class="section map"></div>
+        <section class="section section--center order" id="order">
+            <div class="container order__container">
+                <h2 class="title title--color-orange order__title">Закажите доставку</h2>
+                <div class="form">
+                    <form action="" class="form__elem">
+                        <div class="form__content">
+                            <div class="form__col">
+                                <div class="form__row">
+                                    <div class="form__block">
+                                        <label class="form__block-title" for="name">
+                                            Имя
+                                        </label>
+                                        <input type="text" class="form__input" id="name"
+                                               name="name">
+                                    </div>
+                                    <div class="form__block">
+                                        <label class="form__block-title" for="phone">
+                                            Телефон
+                                        </label>
+                                        <input type="number" class="form__input"
+                                               placeholder="89212264923" id="phone" name="phone">
+                                    </div>
+                                </div>
+                                <div class="form__row">
+                                    <div class="form__block">
+                                        <label class="form__block-title" for="street">
+                                            Улица
+                                        </label>
+                                        <input type="text" class="form__input" id="street"
+                                               name="street">
+                                    </div>
+                                </div>
+                                <div class="form__row">
+                                    <div class="form__block">
+                                        <label class="form__block-title" for="building">
+                                            Дом
+                                        </label>
+                                        <input type="number" class="form__input" id="building"
+                                               name="building">
+                                    </div>
+                                    <div class="form__block">
+                                        <label class="form__block-title" for="corps">
+                                            Корпус
+                                        </label>
+                                        <input type="number" class="form__input" id="corps" name="corps">
+                                    </div>
+                                    <div class="form__block">
+                                        <label class="form__block-title" for="flat">
+                                            Квартира
+                                        </label>
+                                        <input type="number" class="form__input" id="flat"
+                                               name="flat">
+                                    </div>
+                                    <div class="form__block form__block-floor">
+                                        <label class="form__block-title" for="floor">
+                                            Этаж
+                                        </label>
+                                        <input type="number" class="form__input" name="floor"
+                                               id="floor">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form__col">
+                                <div class="form__row">
+                                    <div class="form__block">
+                                        <label class="form__block-title" for="comment">
+                                            Комментарий
+                                        </label>
+                                        <textarea name="comment" id="comment"
+                                                  class="form__input" rows="5">
+                                        </textarea>
+                                    </div>
+                                </div>
+                                <div class="form__row form__row--align">
+                                    <div class="form__block">
+                                        <input type="radio" name="payment" id="payment-by-cash"
+                                               class="form__radio visuallyhidden">
+                                        <label class="form__block-title" for="payment-by-cash">
+                                            Потребуется сдача
+                                        </label>
+                                        <input type="radio" name="payment" id="payment-by-cart"
+                                               class="form__radio visuallyhidden" checked>
+                                        <label class="form__block-title" for="payment-by-cart">
+                                            Оплата по карте
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form__row form__row--align">
+                                    <div class="form__block">
+                                        <input type="checkbox" name="callback" id="callback"
+                                               class="form__checkbox visuallyhidden" checked>
+                                        <label class="form__block-title" for="callback">
+                                            Не перезванивать
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form__row form__row--align">
+                                    <div class="form__block">
+                                        <button type="submit"
+                                                class="btn btn--background-red form__btn">
+                                            Заказать
+                                        </button>
+                                        <button type="reset" class="form__reset">
+                                            Очистить
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="contacts section" id="contacts">
+            <div class="map"></div>
             <footer class="footer">
                 <div class="container footer__container">
-                    <div class="footer__col footer__col--left">
+                    <div class="footer__col footer__col-left">
                         <address class="address">
                             Санкт-Петербург, ул.Бабушкина, д.12/1, 15
                         </address>
@@ -435,7 +592,7 @@
                             <a href="tel:+78123771377" class="phone__link">+7 (812) 377-13-77</a>
                         </div>
                     </div>
-                    <div class="footer__col footer__col--right">
+                    <div class="footer__col footer__col-right">
                         <ul class="socials">
                             <li class="socials__item">
                                 <a href="#" class="socials__link">
@@ -506,7 +663,7 @@
                 </a>
             </li>
             <li class="page-navigation__item">
-                <a href="#" class="page-navigation__link">
+                <a href="#menu" class="page-navigation__link">
                     <span class="hidden">Меню</span>
                 </a>
             </li>
@@ -521,13 +678,13 @@
                 </a>
             </li>
             <li class="page-navigation__item">
-                <a href="#" class="page-navigation__link">
-                    <span class="hidden">Контакты</span>
+                <a href="#order" class="page-navigation__link">
+                    <span class="hidden">Заказ</span>
                 </a>
             </li>
             <li class="page-navigation__item">
                 <a href="#contacts" class="page-navigation__link">
-                    <span class="hidden">Футер</span>
+                    <span class="hidden">Контакты</span>
                 </a>
             </li>
         </ul>

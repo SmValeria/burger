@@ -3,6 +3,10 @@
   z-index: 10;
   right: 50px;
   top: 90px;
+
+  @include tablets {
+    display: none;
+  }
 }
 
 .page-navigation__item:not(:last-of-type) {

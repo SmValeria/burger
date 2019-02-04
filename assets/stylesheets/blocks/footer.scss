@@ -9,8 +9,27 @@
 
 .footer__container {
   flex-direction: row;
+  justify-content: space-between;
+  @include phones {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .footer__col {
-  width: 50%;
+  @include phones {
+    margin-bottom: rem(15px);
+  }
+
+  &:last-of-type {
+    @include phones {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.footer__col-left {
+  @include phones {
+    text-align: center;
+  }
 }

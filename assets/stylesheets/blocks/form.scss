@@ -1,0 +1,141 @@
+.form__elem {
+  margin: -10px;
+}
+.form__content {
+  display: flex;
+  @include tablets {
+    flex-direction: column;
+  }
+}
+
+.form__col {
+  flex: 1;
+  margin: 0 10px;
+  @include tablets {
+    margin-bottom: rem(12px);
+  }
+  &:last-of-type {
+    @include tablets {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.form__row {
+  display: flex;
+  margin:0 -10px rem(12px);
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.form__block {
+  width: 100%;
+  margin: 0 10px;
+}
+
+.form__block-title {
+  display: block;
+  line-height: 2.2;
+}
+
+.form__input {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 2px solid #d1cfcb;
+  background-color: #ffffff;
+
+  &:focus {
+    border-color: $orange;
+  }
+}
+
+.form__radio + .form__block-title,
+.form__checkbox + .form__block-title {
+  position: relative;
+  padding-left: rem(25px);
+  display: inline-block;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease-in-out;
+  }
+
+  &::before {
+    width: 15px;
+    height: 15px;
+    background-color: #ffffff;
+    left: 0;
+  }
+
+}
+
+
+.form__radio + .form__block-title {
+  margin-right: rem(20px);
+  &:last-of-type {
+    margin-right: 0;
+  }
+  &::before,
+  &::after {
+    border-radius: 50%;
+  }
+
+  &::after {
+    width: 0;
+    height: 0;
+    background-color: $red;
+    left: 4px;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.form__radio:checked + .form__block-title {
+  &::after {
+    width: 7px;
+    height: 7px;
+  }
+}
+
+.form__checkbox + .form__block-title {
+  &::after {
+    width: 6px;
+    height: 12px;
+    border-bottom: 2px solid transparent;
+    border-right: 2px solid transparent;
+    left: 5px;
+    transform: translateY(-58%) rotate(0);
+  }
+}
+
+.form__checkbox:checked + .form__block-title {
+  &::after {
+    width: 6px;
+    height: 12px;
+    border-bottom: 2px solid $red;
+    border-right: 2px solid $red;
+    left: 5px;
+    transform: translateY(-58%) rotate(45deg);
+  }
+}
+
+.form__block-floor {
+  @include phones {
+    display: none;
+  }
+}
+
+.form__btn {
+  margin-right: rem(20px);
+}
+
+.form__row--align {
+  @include phones {
+    text-align: center;
+  }
+}

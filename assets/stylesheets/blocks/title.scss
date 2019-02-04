@@ -1,7 +1,13 @@
 .title {
   font-family: "Gagalin", sans-serif;
-  font-size: 5.143em;
+  font-size: em(72px);
   font-weight: 400;
+  @include tablets {
+    line-height: 1.1;
+  }
+  @include phones {
+    font-size: em(50px);
+  }
 
   &--color-orange {
     color: $orange;

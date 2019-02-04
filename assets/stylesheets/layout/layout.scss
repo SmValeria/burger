@@ -80,6 +80,7 @@ button {
   background: transparent;
   cursor: pointer;
   outline: none;
+  color: inherit;
 }
 
 input[type="submit"]:hover,
@@ -97,7 +98,6 @@ input[type="tel"],
 textarea,
 select {
   transition: .3s ease-in;
-  border: none;
   outline: none;
 }
 
@@ -114,6 +114,24 @@ select:focus {
 textarea {
   resize: none;
 }
+
+/* Deleting arrows input[type=number] */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance:textfield;
+}
+/*Changing color of placeholders*/
+::-webkit-input-placeholder {color: #2f3234;}
+::-moz-placeholder          {color: #2f3234;}/* Firefox 19+ */
+:-moz-placeholder           {color: #2f3234;}/* Firefox 18- */
+:-ms-input-placeholder      {color: #2f3234;}
+
+
 
 /* Text align */
 

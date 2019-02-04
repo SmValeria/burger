@@ -1,14 +1,18 @@
 .hero {
-  padding: 0.8% 0 3%;
+  padding: 1% 0 3%;
   background: url("../img/texture.png") center center/cover no-repeat,
-  url("../img/home-bg.jpg") center center/cover no-repeat $dark;
+  url("../img/home-bg.jpg") center center/cover no-repeat, $dark;
   color: $light;
 }
 
 .hero__content {
   display: flex;
   align-items: center;
-  flex: 0.7;
+  flex: 1;
+  @include tablets {
+    flex-direction: column;
+    margin-bottom: rem(15px);
+  }
 }
 
 .hero__content-left,
@@ -24,18 +28,25 @@
 
 .hero__content-right {
   flex-basis: 48%;
-  padding-top: 5%;
+  @include tablets {
+    text-align: center;
+    max-width: rem(450px);
+  }
 }
 
+.hero__title {
+  @include phones {
+    font-size: em(63px);
+  }
+}
 .hero__desc {
   @include lifehack-font;
-  font-size: 4.643em;
+  font-size: rem(65px);
   line-height: 1;
   letter-spacing: -0.02em;
 }
 
 .hero__bottom {
-  margin-top: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,6 +54,10 @@
 
 .hero__img-wrap {
   position: relative;
+  margin-top: rem(-50px);
+  @include phones {
+    max-width: rem(360px);
+  }
 }
 
 .hero__img-overlay {

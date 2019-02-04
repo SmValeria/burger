@@ -1,0 +1,19 @@
+@function rem ($target, $context: $basefont) {
+  @return ($target / $context) * 1rem;
+}
+
+@function em ($target) {
+  @return ($target / 14px) * 1em;
+}
+
+@mixin tablets {
+  @media screen and (max-width: $tablets) {
+    @content;
+  }
+}
+
+@mixin phones {
+  @media screen and (max-width: $phones) {
+    @content;
+  }
+}

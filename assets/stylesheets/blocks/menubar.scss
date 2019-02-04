@@ -1,10 +1,16 @@
+.menubar {
+  @include  tablets {
+    display: none;
+  }
+}
+
 .menubar__list {
   display: flex;
   align-items: center;
 }
 
 .menubar__item {
-  font-size: 0.929em;
+  font-size: em(13px);
   font-weight: 500;
   text-transform: uppercase;
 }

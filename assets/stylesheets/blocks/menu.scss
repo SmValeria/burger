@@ -2,9 +2,6 @@
   background: url("../img/menu.jpg") center center/cover no-repeat, $dark;
   position: relative;
   color: $light;
-}
-
-.menu__container {
   padding: 6% 1%;
 }
 
@@ -14,6 +11,10 @@
   right: 0;
   top: 0;
   bottom: 0;
+  @include phones {
+    width: 100%;
+    justify-content: flex-end;
+  }
 }
 
 .menu__item {
@@ -26,21 +27,6 @@
   height: 100%;
   position: relative;
   cursor: pointer;
-
-  &--meat {
-    background: linear-gradient(rgba(20, 20, 20, 0.7), rgba(20, 20, 20, 0.7)),
-    url("../img/menu-1.jpg") 74% center/cover no-repeat;
-  }
-
-  &--vegan {
-    background: linear-gradient(rgba(20, 20, 20, 0.7), rgba(20, 20, 20, 0.7)),
-    url("../img/menu-2.jpg") 91% center/cover no-repeat;
-  }
-
-  &--diet {
-    background: linear-gradient(rgba(20, 20, 20, 0.7), rgba(20, 20, 20, 0.7)),
-    url("../img/menu-3.jpg") right center/cover no-repeat;
-  }
 }
 
 .menu__item-header {
@@ -50,7 +36,7 @@
   transform: rotate(270deg) translateY(-50%);
   transform-origin: 0 0;
   white-space: nowrap;
-  font-size: 2.857em;
+  font-size: em(40px);
 }
 
 .menu__text {
@@ -65,13 +51,38 @@
   line-height: 1.714em;
 }
 
-.menu__item--active,
-.menu__item:hover {
+.menu__item--active {
+  @include phones {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
   .menu__item-header {
     color: $orange;
   }
 
   .menu__text {
-    max-width: 40rem;
+    max-width: 50vw;
+
+    @include tablets {
+      max-width: calc(100vw - 240px);
+    }
+
+    @include phones {
+      max-width: calc(100vw - 80px);
+    }
+  }
+}
+
+
+.menu__hamburger {
+  display: none;
+  @include phones {
+    display: flex;
+    align-items: flex-end;
+    padding: 30px 30px 0 0;
   }
 }

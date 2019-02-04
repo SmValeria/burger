@@ -17,3 +17,13 @@
   width: 92px;
   height: 69px;
 }
+
+.header__links {
+  display: flex;
+}
+
+.header__link:not(:last-of-type) {
+  @include tablets {
+    margin-right: 30px;
+  }
+}
