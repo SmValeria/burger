@@ -1,12 +1,16 @@
 .socials {
   display: flex;
   align-items: center;
-  height: 100%;
 }
 
 .socials__item:not(:last-of-type) {
   margin-right: 20px;
 }
+
+.socials__link {
+  display: flex;
+}
+
 .socials__icon {
   fill: $light;
   fill-opacity: 0.3;

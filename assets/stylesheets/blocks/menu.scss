@@ -23,10 +23,23 @@
 }
 
 .menu__item-header-wr {
+  flex-shrink: 0;
   width: 80px;
   height: 100%;
   position: relative;
   cursor: pointer;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: linear-gradient(rgba(20, 20, 20, 0.7), rgba(20, 20, 20, 0.7));
+  }
 }
 
 .menu__item-header {
@@ -65,15 +78,7 @@
   }
 
   .menu__text {
-    max-width: 50vw;
-
-    @include tablets {
-      max-width: calc(100vw - 240px);
-    }
-
-    @include phones {
-      max-width: calc(100vw - 80px);
-    }
+    max-width: 540px;
   }
 }
 

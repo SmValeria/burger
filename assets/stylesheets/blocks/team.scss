@@ -21,11 +21,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2%;
+  padding: 2% 0 2% 5%;
 
   @include tablets {
     left: 0;
     width: 100%;
+    padding: 2%;
   }
 }
 
@@ -76,6 +77,9 @@
 
 .team__member:not(:last-of-type) {
   margin-bottom: rem(18px);
+  @include tablets {
+    margin-bottom: rem(24px);
+  }
 }
 
 .team__member-info {
@@ -90,6 +94,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding-left: 0;
   }
 }
 
@@ -146,6 +151,12 @@
   }
 
   & .team__member-info {
-    max-height: rem(500px);
+    max-height: rem(250px);
+    overflow-y: auto;
+
+    @include tablets {
+      max-height: rem(400px);
+    }
   }
 }
+

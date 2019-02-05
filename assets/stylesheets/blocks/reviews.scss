@@ -42,7 +42,10 @@
   @include tablets {
     text-align: center;
     align-items: center;
-    padding: 2%;
+    padding: 2% 15%;
+  }
+  @include phones {
+    padding: 2% 5%;
   }
 }
 
@@ -58,9 +61,7 @@
 .reviews__text {
   line-height: 2;
   margin-bottom: rem(18px);
-  @include tablets {
-    line-height: 1.2;
-  }
+
   @include phones {
     display: none;
   }
@@ -74,5 +75,20 @@
   }
   @include phones {
     font-size: em(24px);
+  }
+}
+
+.reviews__link {
+  &--more {
+    display: flex;
+    @include phones {
+      display: none;
+    }
+  }
+  &--read {
+    display: none;
+    @include phones {
+      display: flex;
+    }
   }
 }

@@ -1,10 +1,13 @@
 .form__elem {
   margin: -10px;
 }
+
 .form__content {
   display: flex;
   @include tablets {
     flex-direction: column;
+    max-width: 490px;
+    margin: 0 auto;
   }
 }
 
