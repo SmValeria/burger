@@ -995,6 +995,11 @@ body {
   color: #ffffff;
   padding: 6% 1%; }
 
+.menu__title {
+  position: absolute;
+  left: 10%;
+  top: 15%; }
+
 .menu__list {
   display: flex;
   position: absolute;
