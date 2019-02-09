@@ -5,8 +5,10 @@
 @import "layout/layout";
 @import "layout/base";
 
+
 @import "blocks/title";
 @import "blocks/scrollbar";
+@import "blocks/slider";
 @import "blocks/hero";
 @import "blocks/btn";
 @import "blocks/header";
@@ -15,6 +17,9 @@
 @import "blocks/scroll-down";
 @import "blocks/page-navigation";
 @import "blocks/about";
+@import "blocks/burger";
+@import "blocks/marker";
+@import "blocks/composition";
 @import "blocks/team";
 @import "blocks/menu";
 @import "blocks/reviews";
@@ -26,3 +31,5 @@
 @import "blocks/address";
 @import "blocks/phone";
 @import "blocks/socials";
+
+
