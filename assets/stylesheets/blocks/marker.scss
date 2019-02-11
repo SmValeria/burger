@@ -51,11 +51,18 @@
 
 .marker__hover {
   position: absolute;
-  opacity: 0;
-  transition: opacity 0.3s;
+  overflow: hidden;
+  width: 100%;
+  max-height: 0;
+  transition: max-height 0.7s ease-in-out;
   z-index: 20;
 }
 
+.marker__hover-wrap {
+  width: 100%;
+  padding: 20px 25px 10px;
+}
+
 .marker:hover + .marker__hover {
-  opacity: 1;
+  max-height: 1000px;
 }

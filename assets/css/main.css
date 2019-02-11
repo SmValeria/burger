@@ -1086,19 +1086,24 @@ body {
 
 .marker__hover {
   position: absolute;
-  opacity: 0;
-  transition: opacity 0.3s;
+  overflow: hidden;
+  width: 100%;
+  max-height: 0;
+  transition: max-height 0.7s ease-in-out;
   z-index: 20; }
 
+.marker__hover-wrap {
+  width: 100%;
+  padding: 20px 25px 10px; }
+
 .marker:hover + .marker__hover {
-  opacity: 1; }
+  max-height: 1000px; }
 
 .composition {
   display: flex;
   align-items: flex-start;
   width: 270px;
   border-radius: 5px;
-  padding: 20px 25px 10px;
   background-color: rgba(255, 255, 255, 0.9);
   color: #2f3234; }
   @media screen and (max-width: 768px) {
@@ -1234,7 +1239,7 @@ body {
   padding-bottom: 0;
   overflow: hidden;
   padding-left: 10px;
-  transition: max-height 0.7s ease-in-out; }
+  transition: max-height 0.5s linear; }
   @media screen and (max-width: 768px) {
     .team__member-info {
       flex-direction: column;
@@ -1344,7 +1349,7 @@ body {
   max-width: 0;
   overflow: hidden;
   background-color: rgba(47, 50, 52, 0.93);
-  transition: max-width 0.7s ease-in-out; }
+  transition: max-width 0.5s linear; }
 
 .menu__desc {
   padding: 6% 4%;
@@ -1366,9 +1371,10 @@ body {
   max-width: 540px; }
 
 .menu__hamburger {
-  display: none; }
+  visibility: hidden; }
   @media screen and (max-width: 480px) {
     .menu__hamburger {
+      visibility: visible;
       display: flex;
       align-items: flex-end;
       padding: 30px 30px 0 0; } }

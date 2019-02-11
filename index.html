@@ -14,6 +14,8 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="./assets/script/fulscreen-menu.js" defer></script>
+    <script src="./assets/script/vertical-accordion.js" defer></script>
+    <script src="./assets/script/horizontal-accordion.js" defer></script>
 </head>
 <body>
 <div class="wrapper">
@@ -185,105 +187,107 @@
                                         <p class="title marker__title">Состав</p>
                                     </div>
                                     <div
-                                            class="marker__hover burger__hover--consist composition">
-                                        <table class="composition__container">
-                                            <tr class="composition__item">
-                                                <td class="composition__icon-wrap">
-                                                    <svg
-                                                            class="composition__icon composition__icon--beef">
-                                                        <use
-                                                                xlink:href="./assets/img/sprite.svg#beef"></use>
-                                                    </svg>
-                                                </td>
-                                                <td class="composition__product">
-                                                    Говядина
-                                                </td>
-                                                <td class="composition__weight">
-                                                    300 г
-                                                </td>
-                                            </tr>
-                                            <tr class="composition__item">
-                                                <td class="composition__icon-wrap">
-                                                    <svg
-                                                            class="composition__icon composition__icon--buns">
-                                                        <use
-                                                                xlink:href="./assets/img/sprite.svg#buns"></use>
-                                                    </svg>
-                                                </td>
-                                                <td class="composition__product">
-                                                    Булочки
-                                                </td>
-                                                <td class="composition__weight">
-                                                    100 г
-                                                </td>
-                                            </tr>
-                                            <tr class="composition__item">
-                                                <td class="composition__icon-wrap">
-                                                    <svg
-                                                            class="composition__icon composition__icon--salad">
-                                                        <use
-                                                                xlink:href="./assets/img/sprite.svg#salad"></use>
-                                                    </svg>
-                                                </td>
-                                                <td class="composition__product">
-                                                    Зелень
-                                                </td>
-                                                <td class="composition__weight">
-                                                    70 г
-                                                </td>
-                                            </tr>
-                                            <tr class="composition__item">
-                                                <td class="composition__icon-wrap">
-                                                    <svg
-                                                            class="composition__icon composition__icon--sauce">
-                                                        <use
-                                                                xlink:href="./assets/img/sprite.svg#sauce"></use>
-                                                    </svg>
-                                                </td>
-                                                <td class="composition__product">
-                                                    Соус
-                                                </td>
-                                                <td class="composition__weight">
-                                                    150 г
-                                                </td>
-                                            </tr>
-                                            <tr class="composition__item">
-                                                <td class="composition__icon-wrap">
-                                                    <svg
-                                                            class="composition__icon composition__icon--cucumber">
-                                                        <use
-                                                                xlink:href="./assets/img/sprite.svg#cucumber"></use>
-                                                    </svg>
-                                                </td>
-                                                <td class="composition__product">
-                                                    Овощи
-                                                </td>
-                                                <td class="composition__weight">
-                                                    200 г
-                                                </td>
-                                            </tr>
-                                            <tr class="composition__item">
-                                                <td class="composition__icon-wrap">
-                                                    <svg
-                                                            class="composition__icon composition__icon--cheese">
-                                                        <use
-                                                                xlink:href="./assets/img/sprite.svg#cheese"></use>
-                                                    </svg>
-                                                </td>
-                                                <td class="composition__product">
-                                                    Сыр
-                                                </td>
-                                                <td class="composition__weight">
-                                                    80 г
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        <a href="#"
-                                           class="hamburger composition__hamburger hamburger--close">
-                                            <span class="hamburger__line hamburger__line-top"></span>
-                                            <span class="hamburger__line hamburger__line-middle"></span>
-                                            <span class="hamburger__line hamburger__line-bottom"></span>
-                                        </a>
+                                            class="marker__hover burger__hover--consist">
+                                        <div class="marker__hover-wrap composition">
+                                            <table class="composition__container">
+                                                <tr class="composition__item">
+                                                    <td class="composition__icon-wrap">
+                                                        <svg
+                                                                class="composition__icon composition__icon--beef">
+                                                            <use
+                                                                    xlink:href="./assets/img/sprite.svg#beef"></use>
+                                                        </svg>
+                                                    </td>
+                                                    <td class="composition__product">
+                                                        Говядина
+                                                    </td>
+                                                    <td class="composition__weight">
+                                                        300 г
+                                                    </td>
+                                                </tr>
+                                                <tr class="composition__item">
+                                                    <td class="composition__icon-wrap">
+                                                        <svg
+                                                                class="composition__icon composition__icon--buns">
+                                                            <use
+                                                                    xlink:href="./assets/img/sprite.svg#buns"></use>
+                                                        </svg>
+                                                    </td>
+                                                    <td class="composition__product">
+                                                        Булочки
+                                                    </td>
+                                                    <td class="composition__weight">
+                                                        100 г
+                                                    </td>
+                                                </tr>
+                                                <tr class="composition__item">
+                                                    <td class="composition__icon-wrap">
+                                                        <svg
+                                                                class="composition__icon composition__icon--salad">
+                                                            <use
+                                                                    xlink:href="./assets/img/sprite.svg#salad"></use>
+                                                        </svg>
+                                                    </td>
+                                                    <td class="composition__product">
+                                                        Зелень
+                                                    </td>
+                                                    <td class="composition__weight">
+                                                        70 г
+                                                    </td>
+                                                </tr>
+                                                <tr class="composition__item">
+                                                    <td class="composition__icon-wrap">
+                                                        <svg
+                                                                class="composition__icon composition__icon--sauce">
+                                                            <use
+                                                                    xlink:href="./assets/img/sprite.svg#sauce"></use>
+                                                        </svg>
+                                                    </td>
+                                                    <td class="composition__product">
+                                                        Соус
+                                                    </td>
+                                                    <td class="composition__weight">
+                                                        150 г
+                                                    </td>
+                                                </tr>
+                                                <tr class="composition__item">
+                                                    <td class="composition__icon-wrap">
+                                                        <svg
+                                                                class="composition__icon composition__icon--cucumber">
+                                                            <use
+                                                                    xlink:href="./assets/img/sprite.svg#cucumber"></use>
+                                                        </svg>
+                                                    </td>
+                                                    <td class="composition__product">
+                                                        Овощи
+                                                    </td>
+                                                    <td class="composition__weight">
+                                                        200 г
+                                                    </td>
+                                                </tr>
+                                                <tr class="composition__item">
+                                                    <td class="composition__icon-wrap">
+                                                        <svg
+                                                                class="composition__icon composition__icon--cheese">
+                                                            <use
+                                                                    xlink:href="./assets/img/sprite.svg#cheese"></use>
+                                                        </svg>
+                                                    </td>
+                                                    <td class="composition__product">
+                                                        Сыр
+                                                    </td>
+                                                    <td class="composition__weight">
+                                                        80 г
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <a href="#"
+                                               class="hamburger composition__hamburger hamburger--close">
+                                                <span class="hamburger__line hamburger__line-top"></span>
+                                                <span class="hamburger__line hamburger__line-middle"></span>
+                                                <span class="hamburger__line hamburger__line-bottom"></span>
+                                            </a>
+                                        </div>
                                     </div>
                                     <div
                                             class="marker marker--kkal burger__marker burger__marker--kkal">
@@ -481,6 +485,11 @@
                         <h3 class="title menu__item-header">Вегетарианское</h3>
                     </header>
                     <div class="menu__text">
+                        <a href="#" class="hamburger menu__hamburger hamburger--close">
+                            <span class="hamburger__line hamburger__line-top"></span>
+                            <span class="hamburger__line hamburger__line-middle"></span>
+                            <span class="hamburger__line hamburger__line-bottom"></span>
+                        </a>
                         <p class="menu__desc">
                             Речевой акт редуцирует диалектический характер. Развивая эту тему,
                             заимствование редуцирует конструктивный механизм сочленений.
@@ -502,6 +511,11 @@
                         <h3 class="title menu__item-header">Диетическое</h3>
                     </header>
                     <div class="menu__text">
+                        <a href="#" class="hamburger menu__hamburger hamburger--close">
+                            <span class="hamburger__line hamburger__line-top"></span>
+                            <span class="hamburger__line hamburger__line-middle"></span>
+                            <span class="hamburger__line hamburger__line-bottom"></span>
+                        </a>
                         <p class="menu__desc">
                             Речевой акт редуцирует диалектический характер. Развивая эту тему,
                             заимствование редуцирует конструктивный механизм сочленений.
