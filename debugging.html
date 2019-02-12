@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HomeWork Debugging</title>
+</head>
+<body>
+    <h1>Please, open console to see the result</h1>
+
+    <script>
+        function filter(input, than) {
+            // напишите здесь код, который возвращает новый массив
+            // в котором содержатся те элементы input, которые больше than
+            let newArr =[];
+            try {
+                if(!input.length) {
+                    throw new Error ('В input передан пустой массив');
+                }
+                input.forEach(function (item) {
+                   if(!isFinite(item)) {
+                       throw new Error ('Один из элементов input не является числом');
+                   } else if (item < 0) {
+                       throw new Error ('Один из элементов input является отрицательным числом');
+                   } else if (item > than) {
+                       newArr.push(item);
+                   }
+                });
+
+                return newArr;
+            } catch (e) {
+                console.log(`${e.message} input: ${input}`);
+            }
+
+
+        }
+        var array = [12, 100, 34, 65, 10];
+        var result = filter(array, 60);
+
+        console.log(result); // [100, 65];
+
+        result = filter(array, 20);
+        console.log(result); // [100, 34, 65];
+        result = filter([], 2);
+        console.log(result);
+        result = filter(['s', 5, 4], 2);
+        console.log(result);
+        result = filter([12, -100, 34, 65, 10], 25);
+        console.log(result);
+
+    </script>
+</body>
+</html>
