@@ -66,13 +66,6 @@
 .composition__hamburger {
   display: none;
 
-  .hamburger__line {
-    background-color: $red;
-  }
-
-  .hamburger__close {
-    opacity: 1;
-  }
   @include tablets {
     display: flex;
   }

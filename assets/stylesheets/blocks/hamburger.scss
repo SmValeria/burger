@@ -1,4 +1,4 @@
-.hamburger{
+.hamburger {
   display: none;
   @include tablets {
     display: flex;
@@ -9,27 +9,41 @@
 
   &--close {
     opacity: 0.7;
+
     .hamburger__line-top {
       transform: translateY(9px) rotate(45deg);
     }
+
     .hamburger__line-bottom {
       transform: translateY(-9px) rotate(-45deg);
     }
+
     .hamburger__line-middle {
       opacity: 0;
     }
   }
-}
 
-.hamburger__line {
-  display: flex;
-  width: 24px;
-  height: 4px;
-  border-radius: 2px;
-  background-color: #ffffff;
-  margin-bottom: 5px;
+  .hamburger__line {
+    display: flex;
+    width: 24px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    margin-bottom: 5px;
+  }
 
   &:last-of-type {
     margin-bottom: 0;
+  }
+}
+
+
+.hamburger--red {
+  .hamburger__line {
+    background-color: $red;
+  }
+
+  &.hamburger--close {
+    opacity: 1;
   }
 }
