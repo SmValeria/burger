@@ -597,8 +597,13 @@ body {
 
 .slider__container {
   display: flex;
-  justify-content: center;
-  align-items: center; }
+  align-items: center;
+  overflow: hidden; }
+
+.slider__list {
+  position: relative;
+  left: 0;
+  transition: left 0.3s; }
 
 .slider__arrow {
   position: absolute;
@@ -606,7 +611,8 @@ body {
   display: flex;
   width: 27px;
   height: 13px;
-  fill: #ffffff; }
+  fill: #ffffff;
+  z-index: 5; }
   .slider__arrow:hover {
     fill: #2f3234;
     filter: drop-shadow(0 5px 0 #2f3234); }
@@ -947,8 +953,7 @@ body {
   color: #ffffff; }
 
 .burger__list {
-  display: flex;
-  width: 100%; }
+  display: flex; }
 
 .burger__item {
   display: flex;
@@ -956,7 +961,8 @@ body {
   width: 100%; }
   @media screen and (max-width: 768px) {
     .burger__item {
-      flex-direction: column; } }
+      flex-direction: column;
+      padding-top: 3.125rem; } }
 
 .burger__col {
   width: 50%; }
@@ -969,19 +975,24 @@ body {
   justify-content: center;
   align-items: center;
   padding: 90px 0;
-  position: relative; }
+  position: relative;
+  height: 100%; }
+  @media screen and (max-width: 768px) {
+    .burger__col--img {
+      height: inherit; } }
   @media screen and (max-width: 768px) {
     .burger__col--img {
       padding-bottom: 0;
       margin-bottom: 10px; } }
 
-@media screen and (max-width: 768px) {
-  .burger__image {
-    max-width: 85%; } }
-
-@media screen and (max-width: 480px) {
-  .burger__image {
-    max-width: 70%; } }
+.burger__image {
+  max-width: 92%; }
+  @media screen and (max-width: 768px) {
+    .burger__image {
+      max-width: 85%; } }
+  @media screen and (max-width: 480px) {
+    .burger__image {
+      max-width: 70%; } }
 
 .burger__marker {
   position: absolute; }
@@ -1021,7 +1032,8 @@ body {
 
 .burger__title {
   line-height: 1;
-  margin-bottom: 2.5rem; }
+  margin-bottom: 2.5rem;
+  word-break: break-word; }
   @media screen and (max-width: 768px) {
     .burger__title {
       margin-bottom: 1.25rem; } }
@@ -1212,7 +1224,8 @@ body {
   align-items: center;
   margin-bottom: 0.9375rem;
   transition: color 0.5s ease-in-out;
-  font-size: 1em; }
+  font-size: 1em;
+  cursor: pointer; }
   @media screen and (max-width: 768px) {
     .team__member-name {
       font-size: 1.71429em; } }
@@ -1674,13 +1687,17 @@ address {
   z-index: 20; }
 
 .popup__container {
+  width: fit-content;
   height: initial;
   border-radius: 5px;
   background-color: #ffffff; }
+  @media screen and (max-width: 480px) {
+    .popup__container {
+      max-width: 95%; } }
 
 .popup__content {
   position: relative;
-  padding: 5% 4%; }
+  padding: 8% 7%; }
 
 .popup__title {
   font-size: 1em;
@@ -1690,3 +1707,6 @@ address {
   position: absolute;
   top: 5%;
   right: 4%; }
+
+.popup__text {
+  margin-bottom: 0.9375rem; }

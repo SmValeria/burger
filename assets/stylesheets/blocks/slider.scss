@@ -4,8 +4,14 @@
 
 .slider__container {
   display: flex;
-  justify-content: center;
   align-items: center;
+  overflow: hidden;
+}
+
+.slider__list {
+  position: relative;
+  left: 0;
+  transition: left 0.3s;
 }
 
 .slider__arrow {
@@ -15,6 +21,7 @@
   width: 27px;
   height: 13px;
   fill: $light;
+  z-index: 5;
   &:hover {
     fill: $dark;
     filter: drop-shadow(0 5px 0 $dark);
