@@ -15,15 +15,18 @@
   position: absolute;
   width: 50%;
   left: 50%;
-  top: 0;
+  top: 45%;
   bottom: 0;
   color: $light;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: initial;
   padding: 2% 0 2% 5%;
+  transform: translateY(-50%);
 
   @include tablets {
+    align-items: center;
+    top: 0;
     left: 0;
     width: 100%;
     padding: 2%;
