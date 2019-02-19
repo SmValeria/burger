@@ -1187,8 +1187,8 @@ body {
 .team__content-wr {
   position: absolute;
   width: 50%;
-  left: 0;
-  top: 50%;
+  left: 50%;
+  top: 0;
   bottom: 0;
   color: #ffffff;
   display: flex;
@@ -1197,7 +1197,7 @@ body {
   padding: 2% 0 2% 5%; }
   @media screen and (max-width: 768px) {
     .team__content-wr {
-      top: 0;
+      left: 0;
       width: 100%;
       padding: 2%; } }
 

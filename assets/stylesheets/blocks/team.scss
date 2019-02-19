@@ -14,8 +14,8 @@
 .team__content-wr {
   position: absolute;
   width: 50%;
-  left: 0;
-  top: 50%;
+  left: 50%;
+  top: 0;
   bottom: 0;
   color: $light;
   display: flex;
@@ -24,7 +24,7 @@
   padding: 2% 0 2% 5%;
 
   @include tablets {
-    top: 0;
+    left: 0;
     width: 100%;
     padding: 2%;
   }
