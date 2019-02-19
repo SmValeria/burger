@@ -1,58 +1,56 @@
-class FullScreenSlider {
+class OneItemSlider {
+
     constructor(selector) {
-        this.slider = document.querySelector(selector);
 
-        this.sliderContainer = this.slider.querySelector('.slider__list');
-        this.sliderItemsCount = this.slider.querySelectorAll('.slider__item').length;
+        this.init = function () {
 
-        this.rightButton = this.slider.querySelector('.slider__arrow--next');
-        this.leftButton = this.slider.querySelector('.slider__arrow--prev');
+            const slider = document.querySelector(selector);
 
-        this.offset = -100;
+            const container = slider.querySelector('.slider__list');
+            const slidesCount = slider.querySelectorAll('.slider__item').length;
 
-        this.sliderContainer.style.left = `${this.offset}%`;
-        this.sliderContainer.style.minWidth = this.sliderItemsCount * 100 + '%';
+            const rightButton = slider.querySelector('.slider__arrow--next');
+            const leftButton = slider.querySelector('.slider__arrow--prev');
 
-        this.leftButton.addEventListener('click', (evt) => {
-            evt.preventDefault();
-            this.slideTo('prev');
-        });
+            const offset = -100;
 
-        this.rightButton.addEventListener('click', (evt) => {
-            evt.preventDefault();
-            this.slideTo('next');
-        });
-    }
+            container.style.left = `${offset}%`;
+            container.style.minWidth = slidesCount * 100 + '%';
 
-    slideTo(direction) {
-        new Promise((resolve, reject) => {
+            leftButton.addEventListener('click', (evt) => {
+                evt.preventDefault();
+                slideTo('prev');
+            });
 
-            if (direction === 'prev') {
-                this.sliderContainer.style.left = '0%';
-            } else {
-                this.sliderContainer.style.left = '-200%';
-            }
+            rightButton.addEventListener('click', (evt) => {
+                evt.preventDefault();
+                slideTo('next');
+            });
 
-            this.sliderContainer.style.transition = 'left 0.3s';
-
-            resolve();
-
-        }).then(() => {
-
-            setTimeout(() => {
+            function slideTo(direction) {
 
                 if (direction === 'prev') {
-                    this.sliderContainer.insertBefore(this.sliderContainer.lastElementChild, this.sliderContainer.firstElementChild);
+                    container.style.left = '0%';
                 } else {
-                    this.sliderContainer.appendChild(this.sliderContainer.firstElementChild);
+                    container.style.left = '-200%';
                 }
 
-                this.sliderContainer.style.left = `${this.offset}%`;
-                this.sliderContainer.style.transition = 'none';
-            }, 300);
-        });
-    }
+                container.style.transition = 'left 0.3s';
 
+                setTimeout(() => {
+
+                    if (direction === 'prev') {
+                        container.insertBefore(container.lastElementChild, container.firstElementChild);
+                    } else {
+                        container.appendChild(container.firstElementChild);
+                    }
+
+                    container.style.left = `${offset}%`;
+                    container.style.transition = 'none';
+                }, 300);
+
+            }
+        }
+    }
 }
 
-new FullScreenSlider ('.slider__container');

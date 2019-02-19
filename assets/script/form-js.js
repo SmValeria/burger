@@ -2,14 +2,11 @@ const form = document.querySelector('.form__elem');
 const submitButton = form.querySelector('[type="submit"]');
 
 submitButton.addEventListener('click', function (evt) {
-    evt.preventDefault();
 
     const name = form.elements.name.value;
     const phone = form.elements.phone.value;
     const comment = form.elements.comment.value;
     const mail = "test@mail.com";
-
-    let message = `Пожалуйста, введите имя, телефон и комментарий`;
 
     let formData = new FormData();
 
@@ -19,22 +16,22 @@ submitButton.addEventListener('click', function (evt) {
     formData.append("to", mail);
 
     if (!checkForm()) {
-        showModal(evt, message);
+        return;
     }
 
-    const xhr = new XMLHttpRequest();
-
-    xhr.responseType = 'json';
-    xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
-    xhr.send(formData);
-
-    xhr.addEventListener('load', function () {
-
-        message = xhr.response.message;
-
-        showModal(evt, message);
-    });
-
+    evt.preventDefault();
+    fetch('https://webdev-api.loftschool.com/sendmail', {
+        method: 'POST',
+        body: formData
+    }).then((response) => {
+        return response.json();
+    }).then((info) => {
+        return info.message;
+    }).then((message) => {
+        showModal(evt, message)
+    }).catch(() => {
+        showModal(evt, 'Что-то пошло не так...')
+    })
 });
 
 function checkForm() {

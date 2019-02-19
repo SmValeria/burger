@@ -14,8 +14,8 @@
 .team__content-wr {
   position: absolute;
   width: 50%;
-  left: 50%;
-  top: 0;
+  left: 0;
+  top: 50%;
   bottom: 0;
   color: $light;
   display: flex;
@@ -24,7 +24,7 @@
   padding: 2% 0 2% 5%;
 
   @include tablets {
-    left: 0;
+    top: 0;
     width: 100%;
     padding: 2%;
   }
@@ -90,7 +90,7 @@
   padding-bottom: 0;
   overflow: hidden;
   padding-left: 10px;
-  transition: max-height 0.5s linear;
+  transition: max-height 0.5s ease-out;
   @include tablets {
     flex-direction: column;
     align-items: center;
@@ -153,7 +153,6 @@
 
   & .team__member-info {
     max-height: rem(250px);
-    overflow-y: auto;
 
     @include tablets {
       max-height: rem(400px);

@@ -61,6 +61,8 @@
 .menu__text {
   max-width: 0;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   background-color: rgba(#2f3234, 0.93);
   transition: max-width 0.5s linear;
 }
@@ -92,10 +94,11 @@
 
 .menu__hamburger {
   visibility: hidden;
+  align-self: flex-end;
   @include phones {
     visibility: visible;
     display: flex;
     align-items: flex-end;
-    padding: 30px 30px 0 0;
+    margin: 30px 30px 0 0;
   }
 }

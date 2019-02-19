@@ -112,7 +112,7 @@ max-width: rem(400px);
 
 .burger__price {
   display: inline-block;
-  margin-right: 30px;
+  margin-right: rem(30px);
   color: #e35028;
   letter-spacing: rem(-1.79px);
   @include phones {

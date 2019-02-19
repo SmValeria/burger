@@ -1044,7 +1044,7 @@ body {
 
 .burger__price {
   display: inline-block;
-  margin-right: 30px;
+  margin-right: 1.875rem;
   color: #e35028;
   letter-spacing: -0.11188rem; }
   @media screen and (max-width: 480px) {
@@ -1187,8 +1187,8 @@ body {
 .team__content-wr {
   position: absolute;
   width: 50%;
-  left: 50%;
-  top: 0;
+  left: 0;
+  top: 50%;
   bottom: 0;
   color: #ffffff;
   display: flex;
@@ -1197,7 +1197,7 @@ body {
   padding: 2% 0 2% 5%; }
   @media screen and (max-width: 768px) {
     .team__content-wr {
-      left: 0;
+      top: 0;
       width: 100%;
       padding: 2%; } }
 
@@ -1253,7 +1253,7 @@ body {
   padding-bottom: 0;
   overflow: hidden;
   padding-left: 10px;
-  transition: max-height 0.5s linear; }
+  transition: max-height 0.5s ease-out; }
   @media screen and (max-width: 768px) {
     .team__member-info {
       flex-direction: column;
@@ -1301,8 +1301,7 @@ body {
     transform: translateX(-100%) rotate(-180deg); }
 
 .team__member--active .team__member-info {
-  max-height: 15.625rem;
-  overflow-y: auto; }
+  max-height: 15.625rem; }
   @media screen and (max-width: 768px) {
     .team__member--active .team__member-info {
       max-height: 25rem; } }
@@ -1362,6 +1361,8 @@ body {
 .menu__text {
   max-width: 0;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   background-color: rgba(47, 50, 52, 0.93);
   transition: max-width 0.5s linear; }
 
@@ -1385,13 +1386,14 @@ body {
   max-width: 540px; }
 
 .menu__hamburger {
-  visibility: hidden; }
+  visibility: hidden;
+  align-self: flex-end; }
   @media screen and (max-width: 480px) {
     .menu__hamburger {
       visibility: visible;
       display: flex;
       align-items: flex-end;
-      padding: 30px 30px 0 0; } }
+      margin: 30px 30px 0 0; } }
 
 .reviews__list {
   display: grid;
