@@ -1481,6 +1481,94 @@ body {
     .reviews__link--read {
       display: flex; } }
 
+.work {
+  padding: 2% 0;
+  background: url("../img/work.jpg") center center/cover no-repeat; }
+
+.work__container {
+  align-items: center; }
+
+.work__title {
+  margin-bottom: 1.75rem; }
+
+.video {
+  max-width: 660px;
+  width: 100%; }
+
+.video__element {
+  display: flex;
+  width: 100%; }
+
+.video__controls {
+  display: flex;
+  align-items: center;
+  height: 35px;
+  padding: 6px 20px;
+  background-color: #3e3e3e; }
+
+.video__control-element {
+  width: 20px;
+  height: 100%;
+  position: relative;
+  margin-right: 20px; }
+
+.video__control-icon {
+  height: 100%;
+  fill: rgba(255, 255, 255, 0.4); }
+  .video__control-icon--play, .video__control-icon--pause {
+    width: 20px;
+    position: absolute;
+    transition: 0.3s ease-in; }
+  .video__control-icon--play {
+    opacity: 1;
+    z-index: 1; }
+    .video__control-icon--play:hover {
+      fill: white; }
+  .video__control-icon--pause {
+    opacity: 0;
+    z-index: 0; }
+    .video__control-icon--pause:hover {
+      fill: white; }
+
+.video__progress-container {
+  width: 70%;
+  display: flex;
+  position: relative; }
+
+.video__progress-bar {
+  width: 100%;
+  height: 4px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  transition: 0.3s linear; }
+  .video__progress-bar::-webkit-progress-bar {
+    background-color: rgba(255, 255, 255, 0.4); }
+  .video__progress-bar::-webkit-progress-value {
+    background-color: white; }
+
+.video__progress-circle {
+  width: 13px;
+  height: 13px;
+  background-color: #8B8B8B;
+  position: absolute;
+  transform: translate(-50%, -4.5px);
+  left: 0;
+  transition: left 0.3s linear; }
+  .video__progress-circle:hover {
+    background-color: white; }
+
+.video.play .video__control-icon--play {
+  opacity: 0;
+  z-index: 0; }
+
+.video.play .video__control-icon--pause {
+  opacity: 1;
+  z-index: 1; }
+
+.video.play .video__progress-circle {
+  background-color: white; }
+
 .order {
   padding: 2% 0;
   background: url("../img/order-bg-texture.png") center center/cover no-repeat, url("../img/order-bg.jpg") center center/cover no-repeat, #2f3234;

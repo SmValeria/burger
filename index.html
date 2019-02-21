@@ -18,6 +18,7 @@
     <script src="./assets/script/modal.js" defer></script>
     <script src="./assets/script/slider.js" defer></script>
     <script src="./assets/script/form-js.js" defer></script>
+    <script src="./assets/script/video.js" defer></script>
     <script src="./assets/script/main.js" defer></script>
 </head>
 <body>
@@ -1299,6 +1300,41 @@
                 </li>
             </ul>
         </section>
+        <section class="section section--center work" id="work">
+            <div class="container work__container">
+                <h2 class="title title--color-dark work__title">
+                    как мы работаем
+                </h2>
+                <div class="video">
+                    <video class="video__element" poster="./assets/img/video.jpg">
+                        <source src="./assets/video/st.mp4" type="video/mp4">
+                        <source src="./assets/video/st.ogv" type="video/ogg">
+                        <source src="./assets/video/st.webm" type="video/webm">
+                    </video>
+                    <div class="video__controls">
+                        <div class="video__control-element">
+                            <svg class="video__control-icon video__control-icon--play">
+                                <use xlink:href="./assets/img/sprite.svg#play-button"></use>
+                            </svg>
+                            <svg class="video__control-icon video__control-icon--pause">
+                                <use xlink:href="./assets/img/sprite.svg#pause"></use>
+                            </svg>
+
+                        </div>
+                        <div class="video__progress-container">
+                            <progress class='video__progress-bar' max="100"
+                                      value="0">
+                            </progress>
+                            <div class="video__progress-circle circle"></div>
+                        </div>
+                        <div class="video__volume"></div>
+                    </div>
+                    <a href="#" class="video__play-btn hidden">
+
+                    </a>
+                </div>
+            </div>
+        </section>
         <section class="section section--center order" id="order">
             <div class="container order__container">
                 <h2 class="title title--color-orange order__title">Закажите доставку</h2>
@@ -1413,7 +1449,7 @@
                 </div>
             </div>
         </section>
-        <section class="contacts section" id="contacts">
+        <section class="section contacts" id="contacts">
             <div class="map"></div>
             <footer class="footer">
                 <div class="container footer__container">
