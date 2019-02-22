@@ -8,7 +8,12 @@ let htmlForHamburger = `
 
 
 function showModal(evt, text) {
-    evt.preventDefault();
+    let isReview = false;
+    if (evt) {
+        evt.preventDefault();
+        isReview = evt.target.classList.contains('reviews__link');
+    }
+
 
     const container = document.querySelector('.wrapper');
     const popup = document.createElement('div');
@@ -18,8 +23,7 @@ function showModal(evt, text) {
     let message = `<div class="container popup__container">
                        <div class="popup__content text-center">`;
 
-    if (evt.target.classList.contains('reviews__link')) {
-
+    if (isReview) {
         const reviewItem = evt.target.closest('.reviews__item');
         const reviewAuthor = reviewItem.querySelector('.reviews__author').textContent;
         const reviewText = reviewItem.querySelector('.reviews__text').textContent;

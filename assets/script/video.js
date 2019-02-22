@@ -8,10 +8,17 @@ const progressPoint = videoContainer.querySelector('.video__progress-circle');
 playPauseButton.addEventListener('click', togglePlayPause);
 video.addEventListener('ended', resetPlayer);
 video.addEventListener('timeupdate', updateProgressBar, false);
-progressBar.addEventListener('click', function () {
-    video.currentTime = 200;
+
+progressBar.addEventListener('click', setCurrentTime);
+
+function setCurrentTime(evt) {
+    const x = evt.offsetX / evt.currentTarget.clientWidth;
+    console.log(evt.offsetX);
+    debugger;
+    video.currentTime = Math.floor(x * video.duration);
     console.log(video.currentTime);
-});
+}
+
 
 function togglePlayPause() {
     if (video.paused || video.ended) {
