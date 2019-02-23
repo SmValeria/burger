@@ -50,9 +50,12 @@ let locations = [
     },
 ];
 
+let video = new MediaPlayer('.video');
+
 document.addEventListener('DOMContentLoaded', () => {
     menu.init();
     team.init();
     burgerSlider.init();
-    contactMap.init(contactMapOptions, locations)
+    contactMap.init(contactMapOptions, locations);
+    video.init();
 });

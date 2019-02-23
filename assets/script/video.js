@@ -1,44 +1,61 @@
-const videoContainer = document.querySelector('.video');
-const video = videoContainer.querySelector('.video__element');
-const playPauseButton = videoContainer.querySelector('.video__control-element');
-const progressBar = videoContainer.querySelector('.video__progress-bar');
-const progressPoint = videoContainer.querySelector('.video__progress-circle');
+class MediaPlayer {
+
+    constructor(selector) {
+        this.init = function () {
+            const videoContainer = document.querySelector(selector);
+            const video = videoContainer.querySelector('.video__element');
+            const playPauseControlButton = videoContainer.querySelector('.video__control-element');
+            const playVideoButton = videoContainer.querySelector('.video__play-btn');
+            const progressBar = videoContainer.querySelector('.video__progress-bar');
+            const progressPoint = videoContainer.querySelector('.video__progress-circle');
+            const progressCurrent = progressBar.querySelector('.video__progress-current');
 
 
-playPauseButton.addEventListener('click', togglePlayPause);
-video.addEventListener('ended', resetPlayer);
-video.addEventListener('timeupdate', updateProgressBar, false);
+            video.addEventListener('canplaythrough', showVideoOnReady, false);
+            video.addEventListener('click', togglePlayPause, false);
 
-progressBar.addEventListener('click', setCurrentTime);
+            video.addEventListener('play', toggleActiveVideoClass);
+            video.addEventListener('pause', toggleActiveVideoClass);
+            video.addEventListener('ended', resetPlayer);
 
-function setCurrentTime(evt) {
-    const x = evt.offsetX / evt.currentTarget.clientWidth;
-    console.log(evt.offsetX);
-    debugger;
-    video.currentTime = Math.floor(x * video.duration);
-    console.log(video.currentTime);
-}
+            video.addEventListener('timeupdate', updateProgressBar, false);
+            progressBar.addEventListener('click', setCurrentTime);
+
+            playPauseControlButton.addEventListener('click', togglePlayPause);
+            playVideoButton.addEventListener('click', togglePlayPause);
 
 
-function togglePlayPause() {
-    if (video.paused || video.ended) {
-        videoContainer.classList.add('play');
-        video.play();
-    } else {
-        videoContainer.classList.remove('play');
-        video.pause();
+            function showVideoOnReady() {
+                videoContainer.classList.remove('hidden');
+            }
+
+            function toggleActiveVideoClass() {
+                videoContainer.classList.toggle('play');
+            }
+
+            function togglePlayPause() {
+                (video.paused) ? video.play() : video.pause()
+
+            }
+
+            function resetPlayer() {
+                progressBar.value = 0;
+                video.currentTime = 0;
+            }
+
+            function updateProgressBar() {
+                let progress = Math.floor(video.currentTime / video.duration * 100);
+                progressCurrent.style.width = `${progress}%`;
+                progressPoint.style.left = `${progress}%`;
+            }
+
+            function setCurrentTime(evt) {
+                let offset = evt.layerX / evt.currentTarget.offsetWidth;
+                console.log(offset);
+                console.log(Math.floor(offset * video.duration));
+                video.currentTime = Math.floor(offset * video.duration);
+                console.log(video.currentTime);
+            }
+        }
     }
-}
-
-function resetPlayer() {
-    progressBar.value = 0;
-    video.currentTime = 0;
-    videoContainer.classList.remove('play');
-}
-
-function updateProgressBar() {
-    let percentage = Math.floor((100 / video.duration) *
-        video.currentTime);
-    progressBar.value = percentage;
-    progressPoint.style.left = `${percentage}%`;
 }

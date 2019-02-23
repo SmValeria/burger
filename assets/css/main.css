@@ -1494,11 +1494,25 @@ body {
 
 .video {
   max-width: 660px;
-  width: 100%; }
+  width: 100%;
+  position: relative; }
 
 .video__element {
   display: flex;
   width: 100%; }
+
+.video__play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer; }
+
+.video__play-icon {
+  max-width: 60px;
+  width: 100%;
+  fill: rgba(255, 255, 255, 0.9);
+  transition: 0.3s ease-in; }
 
 .video__controls {
   display: flex;
@@ -1515,7 +1529,8 @@ body {
 
 .video__control-icon {
   height: 100%;
-  fill: rgba(255, 255, 255, 0.4); }
+  fill: rgba(255, 255, 255, 0.4);
+  cursor: pointer; }
   .video__control-icon--play, .video__control-icon--pause {
     width: 20px;
     position: absolute;
@@ -1533,20 +1548,21 @@ body {
 
 .video__progress-container {
   width: 70%;
-  display: flex;
-  position: relative; }
+  display: flex; }
 
 .video__progress-bar {
   width: 100%;
-  height: 4px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  height: 12px;
+  padding: 4px 0;
   position: relative;
-  transition: 0.3s linear; }
-  .video__progress-bar::-webkit-progress-bar {
-    background-color: rgba(255, 255, 255, 0.4); }
-  .video__progress-bar::-webkit-progress-value {
-    background-color: white; }
+  background-color: rgba(255, 255, 255, 0.4);
+  background-clip: content-box;
+  cursor: pointer; }
+
+.video__progress-current {
+  width: 0;
+  height: 100%;
+  background-color: white; }
 
 .video__progress-circle {
   width: 13px;
@@ -1558,6 +1574,9 @@ body {
   transition: left 0.3s linear; }
   .video__progress-circle:hover {
     background-color: white; }
+
+.video.play .video__play-icon {
+  fill-opacity: 0; }
 
 .video.play .video__control-icon--play {
   opacity: 0;
