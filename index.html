@@ -1327,24 +1327,32 @@
                         <source src="./assets/video/st.webm" type="video/webm">
                     </video>
                     <div class="video__controls">
-                        <div class="video__control-element">
+                        <div class="video__control-element video__playpause-btn">
                             <svg class="video__control-icon video__control-icon--play">
                                 <use xlink:href="./assets/img/sprite.svg#play-button"></use>
                             </svg>
                             <svg class="video__control-icon video__control-icon--pause">
                                 <use xlink:href="./assets/img/sprite.svg#pause"></use>
                             </svg>
-
                         </div>
                         <div class="video__progress-container">
                             <div class="video__progress-bar">
-                                <div class="video__progress-current">
-                                    <div class="video__progress-circle circle"></div>
-                                </div>
+                                <div class="video__progress-current"></div>
                             </div>
-
                         </div>
-                        <div class="video__volume"></div>
+                        <div class="video__control-element video__volume-btn">
+                            <svg class="video__control-icon video__volume-icon--on">
+                                <use xlink:href="./assets/img/sprite.svg#volume"></use>
+                            </svg>
+                            <svg class="video__control-icon video__volume-icon--off">
+                                <use xlink:href="./assets/img/sprite.svg#mute"></use>
+                            </svg>
+                        </div>
+                        <div class="video__volume-container">
+                            <div class="video__volume-bar">
+                                <div class="video__volume-current"></div>
+                            </div>
+                        </div>
                     </div>
                     <div class="video__play-btn">
                         <svg class="video__play-icon">

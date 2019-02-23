@@ -50,7 +50,7 @@ let locations = [
     },
 ];
 
-let video = new MediaPlayer('.video');
+let video = new MediaPlayer('video');
 
 document.addEventListener('DOMContentLoaded', () => {
     menu.init();
