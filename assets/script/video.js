@@ -2,18 +2,18 @@ class MediaPlayer {
 
     constructor(selector) {
         this.init = function () {
-            const videoContainer = document.querySelector(selector);
-            const video = videoContainer.querySelector(`.${selector}__element`);
+            const videoContainer = document.querySelector(`${selector}`);
+            const video = videoContainer.querySelector(`${selector}__element`);
 
-            const playPauseControlButton = videoContainer.querySelector(`.${selector}__playpause-btn`);
-            const playVideoButton = videoContainer.querySelector(`.${selector}__play-btn`);
+            const playPauseControlButton = videoContainer.querySelector(`${selector}__playpause-btn`);
+            const playVideoButton = videoContainer.querySelector(`${selector}__play-btn`);
 
-            const progressBar = videoContainer.querySelector(`.${selector}__progress-bar`);
-            const progressCurrent = progressBar.querySelector(`.${selector}__progress-current`);
+            const progressBar = videoContainer.querySelector(`${selector}__progress-bar`);
+            const progressCurrent = progressBar.querySelector(`${selector}__progress-current`);
 
-            const volumeButton = videoContainer.querySelector(`.${selector}__volume-btn`);
-            const volumeBar = videoContainer.querySelector(`.${selector}__volume-bar`);
-            const volumeCurrent = volumeBar.querySelector(`.${selector}__volume-current`);
+            const volumeButton = videoContainer.querySelector(`${selector}__volume-btn`);
+            const volumeBar = videoContainer.querySelector(`${selector}__volume-bar`);
+            const volumeCurrent = volumeBar.querySelector(`${selector}__volume-current`);
 
             video.addEventListener('loadedmetadata', showVideoOnReady, false);
             video.addEventListener('click', togglePlayPause, false);
@@ -34,6 +34,7 @@ class MediaPlayer {
 
 
             function showVideoOnReady() {
+                videoContainer.classList.remove('hidden');
                 if (!video.muted) {
                     video.volume = 1;
                     volumeCurrent.style.width = `100%`;
