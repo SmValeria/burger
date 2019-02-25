@@ -87,6 +87,9 @@ class OneItemSlider {
 
             if (option.direction === "vertical") {
                 document.addEventListener('keydown', (evt) => {
+                    if(evt.keyCode !== 40 && evt.keyCode !== 38) {
+                        return
+                    }
                     if (inscroll) {
                         return
                     }
@@ -102,9 +105,8 @@ class OneItemSlider {
                         case 38:
                             index = activeSlide - 1;
                             break;
-                        default: return;
                     }
-                    console.log('не сработал ретурн');
+
                     slideTo(index);
                     setTimeout(() => {
                         inscroll = false;
@@ -164,7 +166,7 @@ class OneItemSlider {
 
                     slidesArray.forEach(function (slide, i) {
                         removeActiveClass(slide, 'active');
-                        console.log(index, i);
+
                         if(index === i) {
                             slide.classList.add('active');
                         }
