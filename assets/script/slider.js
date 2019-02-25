@@ -161,10 +161,13 @@ class OneItemSlider {
 
                     }
 
-                    slidesArray.forEach(function (slide) {
+                    slidesArray.forEach(function (slide, i) {
                         removeActiveClass(slide, 'active');
+                        if(index === i) {
+                            slide.classList.add('active');
+                        }
                     });
-                    slidesArray[index].classList.add('active');
+
                     activeSlide = index;
                     if(option.direction === "vertical") {
 

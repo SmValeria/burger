@@ -10,6 +10,7 @@
 
 .slider__list {
   position: relative;
+  will-change: transform;
 }
 
 .slider__arrow {

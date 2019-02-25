@@ -543,7 +543,8 @@ body {
   position: relative; }
 
 .maincontent {
-  height: 100%; }
+  height: 100%;
+  will-change: transform; }
 
 .container {
   width: 95%;
@@ -602,7 +603,8 @@ body {
   overflow: hidden; }
 
 .slider__list {
-  position: relative; }
+  position: relative;
+  will-change: transform; }
 
 .slider__arrow {
   position: absolute;
