@@ -13,7 +13,29 @@ let menu = new Accordion({
     closeButton: 'menu__hamburger'
 });
 
-let burgerSlider = new OneItemSlider('.slider__container');
+let burgerSlider = new OneItemSlider({
+    direction: 'horizontal',
+    slider: 'slider__container',
+    sliderListClass: 'slider__list',
+    sliderItemsClass: 'slider__item',
+    dots: false,
+    controls: true,
+    controlsClass: 'slider__arrow',
+    infinite: true,
+    isWheel: false,
+});
+
+
+let mainSlider = new OneItemSlider({
+    direction: 'vertical',
+    slider: 'wrapper',
+    sliderListClass: 'maincontent',
+    sliderItemsClass: 'section',
+    dots: false,
+    controls: false,
+    infinite: false,
+    isWheel: true,
+});
 
 let contactMap = new createMap('.map');
 
@@ -56,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     menu.init();
     team.init();
     burgerSlider.init();
+    mainSlider.init();
     contactMap.init(contactMapOptions, locations);
     video.init();
 });

@@ -20,6 +20,7 @@
   border: 1px solid transparent;
   border-radius: 50%;
   display: block;
+  transition: border 0.3s ease-in;
 
   &:before {
     content: '';
@@ -35,6 +36,7 @@
   }
 }
 
-.page-navigation__item--active .page-navigation__link {
+.page-navigation__item:hover .page-navigation__link,
+.page-navigation__item.active .page-navigation__link {
   border-color: $light;
 }

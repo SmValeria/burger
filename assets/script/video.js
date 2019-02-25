@@ -34,7 +34,6 @@ class MediaPlayer {
 
 
             function showVideoOnReady() {
-                videoContainer.classList.remove('hidden');
                 if (!video.muted) {
                     video.volume = 1;
                     volumeCurrent.style.width = `100%`;

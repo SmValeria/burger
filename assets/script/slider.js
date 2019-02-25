@@ -1,56 +1,222 @@
 class OneItemSlider {
 
-    constructor(selector) {
+    constructor(option) {
 
         this.init = function () {
 
-            const slider = document.querySelector(selector);
+            let rightButton, leftButton;
 
-            const container = slider.querySelector('.slider__list');
-            const slidesCount = slider.querySelectorAll('.slider__item').length;
+            let activeSlide = 0;
+            let transitionProperty = 'transform';
+            let position = 0;
+            const offset = 100;
 
-            const rightButton = slider.querySelector('.slider__arrow--next');
-            const leftButton = slider.querySelector('.slider__arrow--prev');
+            let inscroll = false;
 
-            const offset = -100;
+            const slider = document.querySelector(`.${option.slider}`);
 
-            container.style.left = `${offset}%`;
-            container.style.minWidth = slidesCount * 100 + '%';
+            const container = slider.querySelector(`.${option.sliderListClass}`);
+            let slidesArray = slider.querySelectorAll(`.${option.sliderItemsClass}`);
 
-            leftButton.addEventListener('click', (evt) => {
-                evt.preventDefault();
-                slideTo('prev');
-            });
+            setDataIndexAttrToSlide(slidesArray);
 
-            rightButton.addEventListener('click', (evt) => {
-                evt.preventDefault();
-                slideTo('next');
-            });
+            if (option.infinite) {
+                activeSlide = 1;
+                position -= offset;
+                let cloneFirstSlide = container.firstElementChild.cloneNode(true);
+                let cloneLastSlide = container.lastElementChild.cloneNode(true);
 
-            function slideTo(direction) {
+                container.insertBefore(cloneLastSlide, container.firstElementChild);
+                container.appendChild(cloneFirstSlide);
+            }
 
-                if (direction === 'prev') {
-                    container.style.left = '0%';
-                } else {
-                    container.style.left = '-200%';
-                }
+            slidesArray = slider.querySelectorAll(`.${option.sliderItemsClass}`);
+            slidesArray[activeSlide].classList.add('active');
 
-                container.style.transition = 'left 0.3s';
+            const slidesCount = container.childElementCount;
 
-                setTimeout(() => {
+            setCurrentPosition(position);
 
-                    if (direction === 'prev') {
-                        container.insertBefore(container.lastElementChild, container.firstElementChild);
-                    } else {
-                        container.appendChild(container.firstElementChild);
-                    }
+            if (option.controls) {
+                rightButton = slider.querySelector(`.${option.controlsClass}--next`);
+                leftButton = slider.querySelector(`.${option.controlsClass}--prev`);
 
-                    container.style.left = `${offset}%`;
-                    container.style.transition = 'none';
-                }, 300);
+                leftButton.addEventListener('click', (evt) => {
+                    evt.preventDefault();
+                    let activeSlide = getIndexActiveSlide(slidesArray);
+                    let index = activeSlide - 1;
+                    slideTo(index);
+                });
+
+                rightButton.addEventListener('click', (evt) => {
+                    evt.preventDefault();
+                    let activeSlide = getIndexActiveSlide(slidesArray);
+                    let index = activeSlide + 1;
+                    slideTo(index);
+                });
 
             }
+
+            if (option.isWheel) {
+
+                slider.addEventListener('wheel', (evt) => {
+
+                    if (inscroll) {
+                        return
+                    }
+                    inscroll = true;
+
+                    const delta = evt.deltaY;
+
+                    let activeSlide = getIndexActiveSlide(slidesArray);
+                    let index;
+                    if (delta > 0) {
+                        index = activeSlide + 1;
+                    }
+
+                    if (delta < 0) {
+                        index = activeSlide - 1;
+                    }
+
+                    slideTo(index);
+                    setTimeout(() => {
+                        inscroll = false;
+                    }, 600);
+                });
+            }
+
+            if (option.direction === "vertical") {
+                document.addEventListener('keydown', (evt) => {
+                    if (inscroll) {
+                        return
+                    }
+                    inscroll = true;
+
+                    let activeSlide = getIndexActiveSlide(slidesArray);
+                    let index;
+
+                    switch (evt.keyCode) {
+                        case 40:
+                            index = activeSlide + 1;
+                            break;
+                        case 38:
+                            index = activeSlide - 1;
+                            break;
+                    }
+
+                    slideTo(index);
+                    setTimeout(() => {
+                        inscroll = false;
+                    }, 600);
+
+                });
+
+                let menuButtons = document.querySelectorAll('[data-scroll-to]');
+
+                menuButtons.forEach((button) => {
+                    button.addEventListener('click', (evt) => {
+                        evt.preventDefault();
+                        const target = parseFloat(evt.currentTarget.getAttribute('data-scroll-to'));
+                        let activeSlide = getIndexActiveSlide(slidesArray);
+                        slideTo(target);
+                        setTimeout(() => {
+                            inscroll = false;
+                        }, 600);
+                    })
+                });
+            }
+
+
+            function slideTo(index) {
+
+                container.style.transition = `${transitionProperty} 0.3s`;
+                if (!option.infinite) {
+                    if (index < 0 || index > slidesCount - 1) {
+                        return
+                    }
+                }
+
+                let currentOffset = (activeSlide - index) * offset;
+                position += currentOffset;
+
+                setCurrentPosition(position);
+
+                setTimeout(() => {
+                    if (option.infinite) {
+                        if (index === 0) {
+
+                            index = slidesCount - 2;
+                            position = (offset * index) * -1;
+                            container.style.transition = 'none';
+                            setCurrentPosition(position);
+
+                        } else if (index === slidesCount - 1) {
+
+                            index = 1;
+                            position = -100;
+                            container.style.transition = 'none';
+                            setCurrentPosition(position);
+
+                        }
+
+                    }
+
+                    slidesArray.forEach(function (slide) {
+                        removeActiveClass(slide, 'active');
+                    });
+                    slidesArray[index].classList.add('active');
+                    activeSlide = index;
+                    if(option.direction === "vertical") {
+
+                        switchActiveClassInAsideMenu(activeSlide);
+                    }
+                }, 300);
+
+
+            }
+
+            function setDataIndexAttrToSlide(array) {
+                array.forEach((item, index) => {
+                    item.setAttribute('data-index', index)
+                })
+            }
+
+            function removeActiveClass(element, classActive) {
+                element.classList.remove(classActive);
+            }
+
+            function setCurrentPosition(position) {
+                if (option.direction === 'horizontal') {
+                    container.style[transitionProperty] = `translateX(${position}%)`;
+                }
+
+                if (option.direction === 'vertical') {
+                    container.style[transitionProperty] = `translateY(${position}%)`;
+                }
+            }
+
+            function getIndexActiveSlide(arr) {
+                let index;
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i].classList.contains('active')) {
+                        index = i;
+                    }
+                }
+                return index;
+            }
+
+            function switchActiveClassInAsideMenu(active) {
+
+                const asideMenuList = document.querySelectorAll('.page-navigation__item');
+                asideMenuList.forEach((item, index) => {
+                    item.classList.remove('active');
+                    if(index === active) {
+                        item.classList.add('active');
+                    }
+                });
+            }
+
         }
+
     }
 }
-

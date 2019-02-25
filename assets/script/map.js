@@ -1,12 +1,12 @@
 class createMap {
 
-    constructor (selector) {
+    constructor(selector) {
         this.init = function (options, locations) {
 
             let mapContainer = document.querySelector(selector);
             let map = new google.maps.Map(mapContainer, options);
 
-            let markers = locations.map(function(location, i) {
+            let markers = locations.map(function (location, i) {
                 return new google.maps.Marker({
                     position: location,
                     map: map,
@@ -31,19 +31,21 @@ class createMap {
             });
 
             function showLocation(geocoder, map, coordinats) {
-
+                let text;
                 geocoder.geocode({'location': coordinats}, function (results, status) {
 
                     if (status === 'OK') {
                         if (results[0]) {
-                            showModal(event, results[0].formatted_address);
+                            text = results[0].formatted_address;
                         } else {
-                            showModal(event, 'No results found');
+                            text = 'No results found';
                         }
                     } else {
-                        showModal(event,'Geocoder failed due to: ' + status);
+                        text = 'Geocoder failed due to: ' + status;
                     }
+                    showModal(null, text);
                 });
+
             }
         }
     }
