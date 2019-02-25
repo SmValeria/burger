@@ -102,8 +102,9 @@ class OneItemSlider {
                         case 38:
                             index = activeSlide - 1;
                             break;
+                        default: return;
                     }
-
+                    console.log('не сработал ретурн');
                     slideTo(index);
                     setTimeout(() => {
                         inscroll = false;
@@ -163,6 +164,7 @@ class OneItemSlider {
 
                     slidesArray.forEach(function (slide, i) {
                         removeActiveClass(slide, 'active');
+                        console.log(index, i);
                         if(index === i) {
                             slide.classList.add('active');
                         }
@@ -209,7 +211,6 @@ class OneItemSlider {
             }
 
             function switchActiveClassInAsideMenu(active) {
-
                 const asideMenuList = document.querySelectorAll('.page-navigation__item');
                 asideMenuList.forEach((item, index) => {
                     item.classList.remove('active');
