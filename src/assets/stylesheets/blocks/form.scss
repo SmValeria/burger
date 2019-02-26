@@ -30,6 +30,9 @@
   &:last-of-type {
     margin-bottom: 0;
   }
+  @include minphones{
+    margin-bottom: 0;
+  }
 }
 
 .form__block {

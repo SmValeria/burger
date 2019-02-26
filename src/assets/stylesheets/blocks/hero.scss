@@ -47,6 +47,9 @@
   @include phones {
     font-size: em(63px);
   }
+  @include minphones {
+    font-size: em(50px);
+  }
 }
 .hero__desc {
   @include lifehack-font;

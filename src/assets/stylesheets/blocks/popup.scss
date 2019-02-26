@@ -20,6 +20,7 @@
     max-width: 95%;
   }
 }
+
 .popup__content {
   position: relative;
   padding: 8% 7%;
@@ -38,4 +39,9 @@
 
 .popup__text {
   margin-bottom: rem(15px);
+}
+
+.popup__content .popup__hamburger {
+  display: flex;
+  flex-direction: column;
 }

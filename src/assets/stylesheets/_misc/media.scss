@@ -17,3 +17,9 @@
     @content;
   }
 }
+
+@mixin minphones {
+  @media screen and (max-width: $minphones) {
+    @content;
+  }
+}

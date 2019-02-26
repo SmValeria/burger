@@ -15,6 +15,9 @@
   @include phones {
     grid-template-columns: 1fr;
   }
+  @include minphones {
+    grid-row-gap: 1%;
+  }
 }
 
 .about__item {

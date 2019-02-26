@@ -20,6 +20,9 @@
     flex-direction: column;
     padding-top: rem(50px);
   }
+  @include minphones{
+    padding-top: 3rem;
+  }
 }
 
 .burger__col {
@@ -110,6 +113,9 @@ max-width: rem(400px);
 .burger__text {
   line-height: 1.7;
   margin-bottom: rem(15px);
+  @include phones {
+    line-height: 1.4;
+  }
 }
 
 .burger__price {

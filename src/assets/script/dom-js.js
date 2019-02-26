@@ -1,4 +1,5 @@
-// Задание 1:
+(function () {
+    // Задание 1:
 //
 // При помощи DOM API создайте DOM-элемент с тегом div
 // Добавьте созданный элемент в DOM-дерево
@@ -34,27 +35,27 @@
 // Убедитесь, что после клика на элемент в консоли появилась надпись с текстом 'Этот текст говорит о том, что я всё сделал правильно'
 //
 
-const container = makeElement({
-    name: 'div',
-    text: 'Этот элемент создан при помощи DOM API'
-});
+    const container = makeElement({
+        name: 'div',
+        text: 'Этот элемент создан при помощи DOM API'
+    });
 
-document.body.appendChild(container);
+    document.body.appendChild(container);
 
 
-const inner = makeElement({
-    name: 'div',
-    className: 'inner',
-    text: 'Этот элемент тоже создан при помощи DOM API'
-});
+    const inner = makeElement({
+        name: 'div',
+        className: 'inner',
+        text: 'Этот элемент тоже создан при помощи DOM API'
+    });
 
-container.appendChild(inner);
+    container.appendChild(inner);
 
-inner.style.color = 'red';
+    inner.style.color = 'red';
 
-inner.addEventListener('click', evt =>
-    console.log('Этот текст говорит о том, что я всё сделал правильно')
-);
+    inner.addEventListener('click', evt =>
+        console.log('Этот текст говорит о том, что я всё сделал правильно')
+    );
 
 
 // Задание 5:
@@ -66,20 +67,20 @@ inner.addEventListener('click', evt =>
 // Напишите код обработчика таким образом, чтобы при клике на созданный элемент в консоли выводилась надпись 'Я кликнул на ссылку HREF'. Вместо HREF необходимо подставить значение атрибута href. Но перехода по ссылке быть не должно.
 
 
-const link = makeElement({
-    name: 'a',
-    text: 'https://loftschool.com',
-    attrName: 'href',
-    attrText: 'https://loftschool.com',
-});
+    const link = makeElement({
+        name: 'a',
+        text: 'https://loftschool.com',
+        attrName: 'href',
+        attrText: 'https://loftschool.com',
+    });
 
-document.body.appendChild(link);
+    document.body.appendChild(link);
 
-link.addEventListener('click', evt => {
-        evt.preventDefault();
-        console.log('Я кликнул на ссылку HREF');
-    }
-);
+    link.addEventListener('click', evt => {
+            evt.preventDefault();
+            console.log('Я кликнул на ссылку HREF');
+        }
+    );
 
 // Задание 6:
 //
@@ -89,34 +90,35 @@ link.addEventListener('click', evt => {
 //
 
 
-const input = makeElement({
-    name: 'input',
-    attrName: 'type',
-    attrText: 'text'
-});
-const button = makeElement({
-    name: 'button',
-    text: 'Нажми на меня',
-    attrName: 'type',
-    attrText: 'button'
-});
+    const input = makeElement({
+        name: 'input',
+        attrName: 'type',
+        attrText: 'text'
+    });
+    const button = makeElement({
+        name: 'button',
+        text: 'Нажми на меня',
+        attrName: 'type',
+        attrText: 'button'
+    });
 
-button.addEventListener('click', evt => console.log(input.value));
+    button.addEventListener('click', evt => console.log(input.value));
 
-document.body.appendChild(input);
-document.body.appendChild(button);
+    document.body.appendChild(input);
+    document.body.appendChild(button);
 
 
-function makeElement(obj) {
-    let elem = document.createElement(obj.name);
-    if (obj.attrName) {
-        elem.setAttribute(obj.attrName, obj.attrText);
+    function makeElement(obj) {
+        let elem = document.createElement(obj.name);
+        if (obj.attrName) {
+            elem.setAttribute(obj.attrName, obj.attrText);
+        }
+        if (obj.text) {
+            elem.textContent = obj.text;
+        }
+        if (obj.className) {
+            elem.classList.add(obj.className);
+        }
+        return elem;
     }
-    if (obj.text) {
-        elem.textContent = obj.text;
-    }
-    if (obj.className) {
-        elem.classList.add(obj.className);
-    }
-    return elem;
-}
+})()

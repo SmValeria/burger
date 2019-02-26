@@ -8,6 +8,9 @@
   @include phones {
     font-size: em(50px);
   }
+  @include minphones{
+    font-size: em(36px);
+  }
 
   &--color-orange {
     color: $orange;

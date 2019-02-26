@@ -1,4 +1,5 @@
-// Типы данных и переменные
+(function () {
+    // Типы данных и переменные
 
 //Перечислите известные типы данных в JS:
 
@@ -12,19 +13,19 @@
 
 // 1.Создайте var-переменную с именем name и запишите в эту переменную ваше имя
 
-var name = "Lera";
+    var name = "Lera";
 
 // 2. Выведите значение созданной переменной на экран
 
-console.log(name);
+    console.log(name);
 
 // 3. Ниже, запишите в созданную переменную новое значение с именем вашего друга/подруги
 
-name = "Eugenia";
+    name = "Eugenia";
 
 // 4. Выведите новое значение на экран
 
-console.log(name);
+    console.log(name);
 
 // 5. Убедитесь, что в обоих случаях выводится верное значение
 
@@ -35,20 +36,20 @@ console.log(name);
 // 2. Пусть ваш условный оператор выводит в консоль любую фразу, если оператору передано истинное
 // выражение
 
-if (100 > 10) {
-    console.log('It\'s right expression');
-}
+    if (100 > 10) {
+        console.log('It\'s right expression');
+    }
 
 // 3. Передайте оператору любое ложное утверждение и убедитесь, что фраза перестала выводиться на
 // экран
 // 4. При помощи else модифицируйте условные оператор так, чтобы в случае ложного утверждения тоже
 // что-то выводилось на экран
 
-if (100 < 10) {
-    console.log('Work if branch');
-} else {
-    console.log('Work else branch')
-}
+    if (100 < 10) {
+        console.log('Work if branch');
+    } else {
+        console.log('Work else branch')
+    }
 
 // Циклический оператор for:
 //
@@ -56,9 +57,9 @@ if (100 < 10) {
 // 2. Сделайте так, чтобы его тело выполнялось 10 раз
 // 3. В теле цикла выведите значение счетчика
 
-for (let i = 1; i <= 10; i++) {
-    console.log(`${i} count iteration`);
-}
+    for (let i = 1; i <= 10; i++) {
+        console.log(`${i} count iteration`);
+    }
 
 // Функции:
 
@@ -66,33 +67,33 @@ for (let i = 1; i <= 10; i++) {
 // 2. Внутри функции сложите значение трех параметров и запишите результат в новую переменную
 // 3. Верните значение этой переменной из функции
 
-function sum(p1, p2, p3) {
-    let result = p1 + p2 + p3;
-    return result;
-}
+    function sum(p1, p2, p3) {
+        let result = p1 + p2 + p3;
+        return result;
+    }
 
 // 4. После того, как опишете функцию, вызовите ее и передайте ей 10, 20 и 30 в качестве аргументов
 // 5. Создайте переменную и результат вызовы функции запишите в переменную и выведите значение
 // переменной на экран
 
-var result1 = sum(10, 20, 30);
+    var result1 = sum(10, 20, 30);
 
-console.log(`result1 = ${result1}`);
+    console.log(`result1 = ${result1}`);
 
 // 6. Убедитесь, что на экран выводится сумма переданных аргументов
 // 7. Ниже повторно проделайте вызов функции и вывод результата на экран, но каждый раз
 // передавайте функции разные аргументы
 // 8. Убедитесь, что каждый раз выводится сумма переданных аргументов
 
-var result2 = sum(8, 9, 6);
-var result3 = sum(14, 23, 18);
-var result4 = sum(89, 85, 84);
-var result5 = sum(1, 2, 3);
+    var result2 = sum(8, 9, 6);
+    var result3 = sum(14, 23, 18);
+    var result4 = sum(89, 85, 84);
+    var result5 = sum(1, 2, 3);
 
-console.log(`result2 = ${result2}`);
-console.log(`result3 = ${result3}`);
-console.log(`result4 = ${result4}`);
-console.log(`result5 = ${result5}`);
+    console.log(`result2 = ${result2}`);
+    console.log(`result3 = ${result3}`);
+    console.log(`result4 = ${result4}`);
+    console.log(`result5 = ${result5}`);
 
 // Массивы и объекты:
 //     Задание 1:
@@ -101,27 +102,27 @@ console.log(`result5 = ${result5}`);
 // Ниже, выедите в консоль итоговой размер массива.
 // Ниже, при помощи for выведите все элементы массива в консоль
 
-var arr = ['привет', 'loftschool'];
+    var arr = ['привет', 'loftschool'];
 
-arr.push(', я изучаю', 'javascript');
+    arr.push(', я изучаю', 'javascript');
 
-console.log(`Length of array = ${arr.length}`);
+    console.log(`Length of array = ${arr.length}`);
 
-for (let j = 0; j < arr.length; j++) {
-    let text = arr[j];
-    console.log(text);
-}
+    for (let j = 0; j < arr.length; j++) {
+        let text = arr[j];
+        console.log(text);
+    }
 // Задание 2:
 // Создайте переменную с массивом и добавьте в этот массив 10 разных чисел. Пусть некоторый числа будут меньше чем 100, а некоторые больше чем 100. Цифры можно добавлять не по порядку
 // При помощи цикла for переберите все числа в массиве и при помощи оператор if внутри тела цикла, выведите в консоль только те числа из массива, которые больше чем 100
 
-var numbers = [10, 287, 56, 78, 964, 12, 74, 795, 455, 45];
+    var numbers = [10, 287, 56, 78, 964, 12, 74, 795, 455, 45];
 
-for (let i = 0; i < numbers.length; i++) {
-    let number = numbers[i];
-    if (number < 100) continue;
-    console.log(number);
-}
+    for (let i = 0; i < numbers.length; i++) {
+        let number = numbers[i];
+        if (number < 100) continue;
+        console.log(number);
+    }
 // Задание 3:
 // Создайте переменную и запишите в нее объект
 // Пусть в этом объекте будут 3 свойства: name, lastName и age
@@ -131,18 +132,18 @@ for (let i = 0; i < numbers.length; i++) {
 // Ниже обратитесь к каждому свойству и выведите значения всех свойств в консоль
 // Ниже добавьте в объект любое новое свойство и выведите его значение на экран
 
-var user = {
-    name: 'Lera',
-    lastName: 'Smirnova',
-    age: 28,
-};
+    var user = {
+        name: 'Lera',
+        lastName: 'Smirnova',
+        age: 28,
+    };
 
-console.log('Name is ' + user.name);
-console.log('Surname is ' + user.lastName);
-console.log('Age = ' + user.age);
+    console.log('Name is ' + user.name);
+    console.log('Surname is ' + user.lastName);
+    console.log('Age = ' + user.age);
 
-user.job = 'Web Developer';
-console.log(user.job);
+    user.job = 'Web Developer';
+    console.log(user.job);
 
 // Задание 4:
 // Создайте функцию с именем hello и параметром human.
@@ -154,9 +155,10 @@ console.log(user.job);
 // Результат вызова функции запишите в переменную и выведите ее значение на экран
 // Подсказка: для того, чтобы объединять строки со значениями переменных, можно использовать оператор ‘+’, например ‘Привет ’ + name
 
-function hello(human) {
-    return `Привет, меня зовут ${human.name} ${human.lastName} и мне ${human.age} лет!`;
-}
+    function hello(human) {
+        return `Привет, меня зовут ${human.name} ${human.lastName} и мне ${human.age} лет!`;
+    }
 
-let greeting = hello(user);
-console.log(greeting);
+    let greeting = hello(user);
+    console.log(greeting);
+})()
