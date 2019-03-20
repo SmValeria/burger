@@ -1,0 +1,35 @@
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #0e0e0e;
+  padding: 8px 0;
+}
+
+.footer__container {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  @include phones {
+    flex-direction: column;
+  }
+}
+
+.footer__col {
+  @include phones {
+    margin-bottom: rem(15px);
+  }
+
+  &:last-of-type {
+    @include phones {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.footer__col-left {
+  @include phones {
+    text-align: center;
+  }
+}

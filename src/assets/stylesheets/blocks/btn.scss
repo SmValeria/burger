@@ -1,0 +1,25 @@
+.btn {
+  padding: 11px 15px;
+  border-radius: 5px;
+  font-size: em(13px);
+  font-weight: 500;
+  text-transform: uppercase;
+  display: inline-flex;
+
+
+  &--background-red {
+    background-color: $red;
+    color: $light;
+    &:hover {
+      background-color: #c1401e;
+    }
+  }
+
+  &--background-dark {
+    background-color: $dark;
+    color: $light;
+    &:hover {
+      background-color: #1f2122;
+    }
+  }
+}

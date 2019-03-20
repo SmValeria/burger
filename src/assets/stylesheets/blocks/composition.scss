@@ -1,0 +1,72 @@
+.composition {
+  display: flex;
+  align-items: flex-start;
+  width: 270px;
+  border-radius: 5px;
+  background-color: rgba($light, 0.9);
+  color: $dark;
+  @include tablets {
+    width: calc(100% - 90px);
+    max-width: 320px;
+  }
+  @include phones {
+    max-width: none;
+    padding: 3% 1.2% 2.5%;
+  }
+}
+
+.composition__container {
+  width: 100%;
+  @include tablets {
+    margin-right: 5%;
+  }
+}
+
+.composition__item:not(:last-of-type) td{
+  padding-bottom: 5px;
+}
+
+.composition__product {
+  font-weight: 500;
+}
+
+.composition__weight {
+  text-align: right;
+}
+
+.composition__icon {
+  width: 48px;
+  height: 43px;
+}
+
+.composition__icon--beef {
+  fill: #e25028;
+}
+
+.composition__icon--buns {
+  fill: #f8b43a;
+}
+
+.composition__icon--salad {
+  fill: #8ac03e;
+}
+
+.composition__icon--sauce {
+  fill: #e25028;
+}
+
+.composition__icon--cucumber {
+  fill: #8ac03e;
+}
+
+.composition__icon--cheese {
+  fill: #f8b43a;
+}
+
+.composition__hamburger {
+  display: none;
+
+  @include tablets {
+    display: flex;
+  }
+}

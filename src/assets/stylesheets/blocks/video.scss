@@ -1,0 +1,172 @@
+.video {
+  max-width: 660px;
+  width: 100%;
+  position: relative;
+}
+
+.video__element {
+  display: flex;
+  width: 100%;
+}
+
+.video__play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.video__play-icon {
+  max-width: 60px;
+  width: 100%;
+  fill: rgba(white, 0.9);
+  transition: 0.3s ease-in;
+  @include tablets {
+    fill: rgba(black, 0.8);
+  }
+}
+
+.video__controls {
+  display: flex;
+  align-items: center;
+  height: 35px;
+  padding: 6px 20px;
+  background-color: #3e3e3e;
+}
+
+.video__control-element {
+  width: 20px;
+  height: 100%;
+  position: relative;
+  margin-right: 20px;
+}
+
+.video__control-icon {
+  height: 100%;
+  fill: rgba(white, 0.4);
+  cursor: pointer;
+  width: 20px;
+  position: absolute;
+  transition: 0.3s ease-in;
+
+  &--play {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  &--pause {
+    opacity: 0;
+    z-index: 0;
+  }
+
+
+  &:hover {
+    fill: rgba(white, 1);
+  }
+}
+
+.video__volume-btn{
+  @include phones {
+    margin-right: 0;
+  }
+  .video__volume-icon--on {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .video__volume-icon--off {
+    opacity: 0;
+    z-index: 0;
+  }
+}
+
+.video__volume-btn--muted {
+  .video__volume-icon--on {
+    opacity: 0;
+    z-index: 0;
+  }
+
+  .video__volume-icon--off {
+    opacity: 1;
+    z-index: 1;
+  }
+}
+
+.video__progress-container {
+  width: 70%;
+  margin-right: 20px;
+  @include phones {
+    flex-grow: 1;
+  }
+}
+
+.video__progress-bar,
+.video__volume-bar {
+  width: 100%;
+  height: 12px;
+  padding: 4px 0;
+  position: relative;
+  background-color: rgba(white, 0.4);
+  background-clip: content-box;
+  cursor: pointer;
+}
+
+.video__progress-current,
+.video__volume-current {
+  width: 0;
+  height: 100%;
+  background-color: white;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: flex;
+    width: 13px;
+    height: 13px;
+    background-color: #8B8B8B;
+    position: absolute;
+    right: 0;
+    border-radius: 50%;
+    transform: translate(50%, -4.5px);
+    transition: left 0.3s linear;
+
+    &:hover {
+      background-color: white;
+    }
+  }
+}
+
+
+.video__volume-container {
+  width: 14%;
+
+  @include phones {
+    display: none;
+  }
+}
+
+.video.play {
+
+  .video__play-icon {
+    fill-opacity: 0;
+  }
+
+  .video__control-icon {
+    &--play {
+      opacity: 0;
+      z-index: 0;
+    }
+
+    &--pause {
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+
+  .video__progress-current::after {
+    background-color: white;
+  }
+
+
+}

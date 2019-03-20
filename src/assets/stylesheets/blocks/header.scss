@@ -1,0 +1,88 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+}
+
+.header__menubar {
+  margin-right: 15px;
+}
+
+.header__logo-img {
+  width: 92px;
+  height: 69px;
+}
+
+.header__links {
+  display: flex;
+}
+
+.header__link:not(:last-of-type) {
+  @include tablets {
+    margin-right: 30px;
+  }
+}
+
+.header--active {
+  @include tablets {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 20px;
+    background-color: rgba($dark, 0.99);
+    z-index: 1000;
+    align-items: flex-start;
+
+    .logo, .hamburger {
+      position: fixed;
+    }
+    
+    .logo {
+      left: 2%;
+    }
+
+    .hamburger {
+      right: 2%;
+      top: 30px;
+    }
+
+    .header__right {
+      height: 100%;
+      flex: 1;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    .menubar {
+      display: flex;
+      align-self: center;
+      margin-right: 0;
+    }
+
+    .menubar__list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .menubar__item {
+      font-size: em(24px);
+      font-weight: 400;
+    }
+
+    .menubar__item:not(:last-of-type)::after {
+      margin-left: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .header__order-btn {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.scroll-down__link {
+  width: 29px;
+  height: 14px;
+  display: flex;
+}
+
+.scroll-down__icon {
+  fill: $light;
+  transition: filter 0.2s linear,
+  fill 0.2s linear;
+
+  &:hover {
+    fill: $orange;
+    filter: drop-shadow(0 5px 0px $orange) drop-shadow(0 5px 0px $orange);
+  }
+}

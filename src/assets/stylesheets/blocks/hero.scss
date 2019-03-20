@@ -1,0 +1,80 @@
+.hero {
+  padding: 1% 0 3%;
+  background: url("../img/texture.png") center center/cover no-repeat,
+  url("../img/home-bg.jpg") center center/cover no-repeat, $dark;
+  color: $light;
+}
+
+.hero__content {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  @include tablets {
+    flex-direction: column;
+    margin-bottom: rem(15px);
+    justify-content: center;
+  }
+}
+
+.hero__content-left,
+.hero__content-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__content-left {
+  flex-basis: 52%;
+  @include tablets {
+    flex-basis: auto;
+    margin-bottom: rem(20px);
+  }
+}
+
+.hero__content-right {
+  flex-basis: 48%;
+  @include tablets {
+    text-align: center;
+    max-width: rem(450px);
+    flex-basis: auto;
+  }
+}
+
+.hero__title {
+  @include tablets {
+    margin-bottom: rem(20px);
+  }
+  @include phones {
+    font-size: em(63px);
+  }
+  @include minphones {
+    font-size: em(50px);
+  }
+}
+.hero__desc {
+  @include lifehack-font;
+  font-size: rem(65px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.hero__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__img-wrap {
+  position: relative;
+  margin-top: rem(-50px);
+  @include phones {
+    max-width: 360px;
+  }
+}
+
+.hero__img-overlay {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 52%;
+}

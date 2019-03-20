@@ -1,0 +1,166 @@
+.team {
+  background: linear-gradient(rgba(47, 50, 52, 0.93), rgba(47, 50, 52, 0.93)) right center/50% 100% no-repeat,
+  url("../img/team-bg.jpg") center top/cover no-repeat;
+  @include tablets {
+    background-size: 100%, cover;
+  }
+}
+
+.team__container {
+  position: relative;
+}
+
+
+.team__content-wr {
+  position: absolute;
+  width: 50%;
+  left: 50%;
+  top: 45%;
+  bottom: 0;
+  color: $light;
+  display: flex;
+  justify-content: center;
+  align-items: initial;
+  padding: 2% 0 2% 5%;
+  transform: translateY(-50%);
+
+  @include tablets {
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2%;
+    transform: translateY(0);
+  }
+}
+
+.team__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @include tablets {
+    align-items: center;
+  }
+}
+
+.team__title {
+  margin-bottom: rem(23px);
+}
+
+.team__member {
+  display: flex;
+  flex-direction: column;
+  @include tablets {
+    align-items: center;
+  }
+
+}
+
+.team__member-name {
+  display: flex;
+  align-items: center;
+  margin-bottom: rem(15px);
+  transition: color 0.5s ease-in-out;
+  font-size: em(14px);
+  cursor: pointer;
+  @include tablets {
+    font-size: em(24px);
+  }
+
+  &::before {
+    content: '';
+    display: flex;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-bottom-width: 0;
+    border-top: 6px $orange solid;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out;
+  }
+}
+
+.team__member:not(:last-of-type) {
+  margin-bottom: rem(18px);
+  @include tablets {
+    margin-bottom: rem(24px);
+  }
+}
+
+.team__member-info {
+  display: flex;
+  align-items: flex-start;
+  max-height: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+  padding-left: 10px;
+  transition: max-height 0.5s ease-out;
+  @include tablets {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-left: 0;
+  }
+}
+
+.team__member-left {
+  margin-right: rem(20px);
+  @include tablets {
+    margin-right: 0;
+  }
+}
+
+.team__member-appearance {
+  width: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  background: center center/cover no-repeat, $dark;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+}
+
+.team__member-left,
+.team__member-right {
+  padding-bottom: rem(18px);
+}
+
+.team__member-text {
+  max-width: rem(210px);
+  @include tablets {
+    max-width: rem(310px);
+  }
+}
+
+.team__member-occupation {
+  font-weight: 700;
+  margin-bottom: rem(10px);
+}
+
+.team__member-about {
+  line-height: 1.7;
+}
+
+.team__member--active {
+
+  & .team__member-name {
+    color: $orange;
+
+    &::before {
+      transform: translateX(-100%) rotate(-180deg);
+    }
+  }
+
+  & .team__member-info {
+    max-height: rem(250px);
+
+    @include tablets {
+      max-height: rem(400px);
+    }
+  }
+}
+

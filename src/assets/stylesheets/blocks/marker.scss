@@ -1,0 +1,68 @@
+.marker {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.marker--consist {
+  width: 90px;
+  height: 90px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(#e35028, 0.4);
+}
+
+.marker--kkal {
+  width: 60px;
+  height: 75px;
+  opacity: 0.5;
+}
+
+.marker__appearance {
+  position: relative;
+}
+
+.marker__icon {
+  fill: $light;
+}
+
+.marker__icon--burger {
+  width: 46px;
+  height: 44px;
+}
+
+.marker__icon--kkal {
+  width: 60px;
+  height: 60px;
+}
+
+.marker__title {
+  font-size: em(14px);
+}
+
+.marker__img-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -30%);
+  font-size: em(20px);
+}
+
+.marker__hover {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  max-height: 0;
+  transition: max-height 0.7s ease-in-out;
+  z-index: 30;
+}
+
+.marker__hover-wrap {
+  width: 100%;
+  padding: 20px 25px 10px;
+}
+
+.marker:hover + .marker__hover {
+  max-height: 1000px;
+}

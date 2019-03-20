@@ -1,0 +1,45 @@
+.slider {
+  position: relative;
+}
+
+.slider__container {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slider__list {
+  position: relative;
+  will-change: transform;
+}
+
+.slider__arrow {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  width: 27px;
+  height: 13px;
+  fill: $light;
+  z-index: 5;
+  &:hover {
+    fill: $dark;
+    filter: drop-shadow(0 5px 0 $dark);
+  }
+}
+
+.slider__arrow--prev {
+  left: -20px;
+  transform: translateY(-50%) rotate(90deg);
+  @include tablets {
+    left: 0;
+  }
+}
+
+.slider__arrow--next {
+  right: -20px;
+  transform: translateY(-50%) rotate(-90deg);
+  @include tablets {
+    right: 0;
+  }
+}
+

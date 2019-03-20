@@ -1,0 +1,104 @@
+.menu {
+  background: url("../img/menu.jpg") center center/cover no-repeat, $dark;
+  position: relative;
+  color: $light;
+  padding: 6% 1%;
+}
+
+.menu__title {
+  position: absolute;
+  left: 10%;
+  top: 15%;
+}
+
+.menu__list {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  @include phones {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+.menu__item {
+  height: 100%;
+  display: flex;
+}
+
+.menu__item-header-wr {
+  flex-shrink: 0;
+  width: 80px;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: linear-gradient(rgba(20, 20, 20, 0.7), rgba(20, 20, 20, 0.7));
+  }
+}
+
+.menu__item-header {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: rotate(270deg) translateY(-50%);
+  transform-origin: 0 0;
+  white-space: nowrap;
+  font-size: em(40px);
+}
+
+.menu__text {
+  max-width: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(#2f3234, 0.93);
+  transition: max-width 0.5s linear;
+}
+
+.menu__desc {
+  padding: 6% 4%;
+  line-height: 1.714em;
+}
+
+.menu__item--active {
+
+  @include phones {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  .menu__item-header {
+    color: $orange;
+  }
+
+  .menu__text {
+    max-width: 540px;
+  }
+}
+
+
+.menu__hamburger {
+  visibility: hidden;
+  align-self: flex-end;
+  @include phones {
+    visibility: visible;
+    display: flex;
+    align-items: flex-end;
+    margin: 30px 30px 0 0;
+  }
+}

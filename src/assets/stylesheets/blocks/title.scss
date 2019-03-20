@@ -1,0 +1,25 @@
+.title {
+  font-family: "Gagalin", sans-serif;
+  font-size: em(72px);
+  font-weight: 400;
+  @include tablets {
+    line-height: 1.1;
+  }
+  @include phones {
+    font-size: em(50px);
+  }
+  @include minphones{
+    font-size: em(36px);
+  }
+
+  &--color-orange {
+    color: $orange;
+  }
+  &--color-light {
+    color: $light;
+  }
+
+  &--color-dark {
+    color: $dark;
+  }
+}

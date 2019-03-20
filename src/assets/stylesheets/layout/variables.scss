@@ -1,0 +1,25 @@
+//fonts-size
+
+$basefont: 16px;
+
+
+//colors
+
+$light: #ffffff;
+$dark: #2f3234;
+$orange: #f9b43b;
+$red : #e45028;
+
+
+//breakpoints
+
+$tablets: 768px;
+$phones: 480px;
+$minphones: 380px;
+
+//mixins
+
+@mixin lifehack-font {
+  font-family: "LifeHack", Georgia, sans-serif;
+  font-weight: 500;
+}

@@ -1,0 +1,10 @@
+.order {
+  padding: 2% 0;
+  background: url("../img/order-bg-texture.png") center center/cover no-repeat,
+  url("../img/order-bg.jpg") center center/cover no-repeat, $dark;
+  color: $light;
+}
+
+.order__title {
+  margin-bottom: rem(20px);
+}
